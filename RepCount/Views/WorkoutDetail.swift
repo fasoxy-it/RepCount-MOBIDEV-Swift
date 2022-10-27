@@ -10,8 +10,9 @@ import AVKit
 
 struct WorkoutDetail: View {
     
+    @State private var player = AVPlayer()
+    
     var workout: Workout
-    var player = AVPlayer()
     
     var body: some View {
         ZStack {

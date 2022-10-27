@@ -12,7 +12,7 @@ struct WorkoutList: View {
         NavigationView {
             List(Workouts().workouts) {workout in
                 NavigationLink {
-                    //WorkoutDetail
+                    WorkoutDetail(workout: workout)
                 } label: {
                     WorkoutRow(workout: workout)
                 }
