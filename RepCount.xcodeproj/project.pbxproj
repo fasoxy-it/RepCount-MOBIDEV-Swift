@@ -16,6 +16,7 @@
 		0BB09BFF290AD9B2001ECC1E /* situps.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0BB09BFC290AD9B1001ECC1E /* situps.mp4 */; };
 		0BB09C00290AD9B2001ECC1E /* pushups.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0BB09BFD290AD9B2001ECC1E /* pushups.mp4 */; };
 		0BB09C01290AD9B2001ECC1E /* squats.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0BB09BFE290AD9B2001ECC1E /* squats.mp4 */; };
+		0BB09C03290ADA06001ECC1E /* WorkoutRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09C02290ADA06001ECC1E /* WorkoutRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		0BB09BFC290AD9B1001ECC1E /* situps.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = situps.mp4; sourceTree = "<group>"; };
 		0BB09BFD290AD9B2001ECC1E /* pushups.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = pushups.mp4; sourceTree = "<group>"; };
 		0BB09BFE290AD9B2001ECC1E /* squats.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = squats.mp4; sourceTree = "<group>"; };
+		0BB09C02290ADA06001ECC1E /* WorkoutRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				0BB09BE9290AD6E8001ECC1E /* ContentView.swift */,
+				0BB09C02290ADA06001ECC1E /* WorkoutRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BB09BEA290AD6E8001ECC1E /* ContentView.swift in Sources */,
+				0BB09C03290ADA06001ECC1E /* WorkoutRow.swift in Sources */,
 				0BB09BE8290AD6E8001ECC1E /* AppDelegate.swift in Sources */,
 				0BB09BEC290AD6E8001ECC1E /* Experience.rcproject in Sources */,
 				0BB09BFB290AD852001ECC1E /* Model.swift in Sources */,
