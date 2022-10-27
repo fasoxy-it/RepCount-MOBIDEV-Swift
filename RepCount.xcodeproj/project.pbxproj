@@ -13,6 +13,9 @@
 		0BB09BEE290AD6E9001ECC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB09BED290AD6E9001ECC1E /* Assets.xcassets */; };
 		0BB09BF1290AD6E9001ECC1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB09BF0290AD6E9001ECC1E /* Preview Assets.xcassets */; };
 		0BB09BFB290AD852001ECC1E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09BFA290AD852001ECC1E /* Model.swift */; };
+		0BB09BFF290AD9B2001ECC1E /* situps.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0BB09BFC290AD9B1001ECC1E /* situps.mp4 */; };
+		0BB09C00290AD9B2001ECC1E /* pushups.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0BB09BFD290AD9B2001ECC1E /* pushups.mp4 */; };
+		0BB09C01290AD9B2001ECC1E /* squats.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0BB09BFE290AD9B2001ECC1E /* squats.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		0BB09BED290AD6E9001ECC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BB09BF0290AD6E9001ECC1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0BB09BFA290AD852001ECC1E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		0BB09BFC290AD9B1001ECC1E /* situps.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = situps.mp4; sourceTree = "<group>"; };
+		0BB09BFD290AD9B2001ECC1E /* pushups.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = pushups.mp4; sourceTree = "<group>"; };
+		0BB09BFE290AD9B2001ECC1E /* squats.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = squats.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,9 @@
 		0BB09BF9290AD78A001ECC1E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0BB09BFD290AD9B2001ECC1E /* pushups.mp4 */,
+				0BB09BFC290AD9B1001ECC1E /* situps.mp4 */,
+				0BB09BFE290AD9B2001ECC1E /* squats.mp4 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -156,6 +165,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BB09BF1290AD6E9001ECC1E /* Preview Assets.xcassets in Resources */,
+				0BB09BFF290AD9B2001ECC1E /* situps.mp4 in Resources */,
+				0BB09C01290AD9B2001ECC1E /* squats.mp4 in Resources */,
+				0BB09C00290AD9B2001ECC1E /* pushups.mp4 in Resources */,
 				0BB09BEE290AD6E9001ECC1E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
