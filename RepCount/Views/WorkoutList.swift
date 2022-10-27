@@ -9,7 +9,19 @@ import SwiftUI
 
 struct WorkoutList: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List(Workouts().workouts) {workout in
+                NavigationLink {
+                    //WorkoutDetail
+                } label: {
+                    WorkoutRow(workout: workout)
+                }
+                .listRowBackground(Color.black)
+            }
+            .navigationTitle("Workouts")
+        }
+        .environment(\.colorScheme, .dark)
+        .accentColor(.white)
     }
 }
 
