@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Workout {
+struct Workout: Hashable, Codable, Identifiable {
+    var id = UUID()
     var name: String
     var logo: String
     var description: String
