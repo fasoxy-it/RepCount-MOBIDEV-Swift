@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct Workout {
+    var name: String
+    var logo: String
+    var description: String
+    var video: String
+    var muscle: String
+    var intensity: String
+    var attentions: [String]
+}
