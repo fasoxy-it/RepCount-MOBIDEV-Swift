@@ -13,17 +13,17 @@ struct WorkoutRow: View {
     
     var body: some View {
         ZStack {
-            Color.black
-                .ignoresSafeArea()
+            Rectangle()
+                .foregroundColor(Color("Gray"))
             HStack {
                 VStack {
                     ZStack {
                         Circle()
-                            .foregroundColor(.gray)
-                            .frame(width: 75, height: 75)
+                            .fill(Color("Color").gradient)
+                            .frame(width: 45, height: 45)
                         Image(systemName: workout.logo)
-                            .font(.system(size: 34))
-                            .foregroundColor(.green)
+                            .font(.system(size: 28))
+                            .foregroundColor(Color("Green"))
                     }
                 }
                 VStack {
@@ -42,7 +42,10 @@ struct WorkoutRow: View {
                     }
                 }
             }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 5)
         }
+        .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }
 

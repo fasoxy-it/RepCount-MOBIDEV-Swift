@@ -18,72 +18,123 @@ struct WorkoutDetail: View {
         ZStack {
             Color.black
                 .ignoresSafeArea()
-            VStack {
-                HStack {
-                    VStack {
-                        ZStack {
-                            Circle()
-                                .foregroundColor(.gray)
-                                .frame(width: 100, height: 100)
-                            Image(systemName: workout.logo)
-                                .font(.system(size: 50))
-                                .foregroundColor(.green)
+            ScrollView {
+                VStack {
+                    HStack {
+                        VStack {
+                            ZStack {
+                                Circle()
+                                    .fill(Color("Color").gradient)
+                                    .frame(width: 85, height: 85)
+                                Image(systemName: workout.logo)
+                                    .font(.system(size: 40))
+                                    .foregroundColor(Color("Green"))
+                            }
                         }
+                        VStack {
+                            HStack {
+                                Text(workout.name)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                Spacer()
+                            }.padding(.bottom, 1)
+                            HStack {
+                                Image(systemName: "figure.stand")
+                                    .font(.system(size: 17))
+                                    .foregroundColor(.indigo)
+                                Text(workout.muscle)
+                                    .font(.body)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                    .padding(.leading, 5)
+                                Spacer()
+                            }.padding(.bottom, 1)
+                            HStack {
+                                Image(systemName: "flame.fill")
+                                    .font(.system(size: 17))
+                                    .foregroundColor(.orange)
+                                Text(workout.intensity)
+                                    .font(.body)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.white)
+                                Spacer()
+                            }
+                        }.padding(.leading, 10)
                     }
-                    VStack {
-                        HStack {
-                            Text(workout.name)
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                            Spacer()
-                        }.padding(.bottom, 1)
-                        HStack {
-                            Image(systemName: "figure.stand")
-                                .font(.system(size: 17))
-                                .foregroundColor(.indigo)
-                            Text(workout.muscle)
-                                .font(.body)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .padding(.leading, 5)
-                            Spacer()
-                        }.padding(.bottom, 1)
-                        HStack {
-                            Image(systemName: "flame.fill")
-                                .font(.system(size: 17))
-                                .foregroundColor(.orange)
-                            Text(workout.intensity)
-                                .font(.body)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                            Spacer()
+                    HStack {
+                        Text("Description")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        Spacer()
+                    }
+                    .padding(.top)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .foregroundColor(Color("Gray"))
+                        VStack {
+                            HStack {
+                                Text(workout.description)
+                                    .font(.body)
+                                    .foregroundColor(.white)
+                            }
+                            .padding(.top, 1)
+                            VStack {
+                                HStack {
+                                    VideoPlayer(player: AVPlayer(url: Bundle.main.url(forResource: workout.video, withExtension: "mp4")!))
+                                        .frame(height: 205)
+                                }
+                            }.padding(.vertical, 5)
+                            
+                        }.padding(.all)
+                    }
+                    HStack {
+                        Text("Attentions")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        Spacer()
+                    }.padding(.top)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 15)
+                            .foregroundColor(Color("Gray"))
+                        VStack {
+                            HStack {
+                                VStack {
+                                    ForEach (workout.attentions, id: \.self) {
+                                        attention in
+                                        HStack {
+                                            Label {
+                                                Text(attention).foregroundColor(.white)
+                                                Spacer()
+                                            } icon: {
+                                                Image(systemName: "circle.fill")
+                                                    .font(.system(size: 10))
+                                                    .foregroundColor(.white)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }.padding(.all)
+                    }
+                    
+                    HStack {
+                        NavigationLink(destination: ContentView()) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .foregroundColor(Color("Green"))
+                                    .frame(height: 50)
+                                Text("Start")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
+                            }
                         }
-                    }.padding(.leading, 10)
-                }
-                HStack {
-                    Text("Description")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    Spacer()
-                }.padding(.top, 5)
-                HStack {
-                    Text(workout.description)
-                        .font(.body)
-                        .foregroundColor(.white)
-                }
-                HStack {
-                    VideoPlayer(player: AVPlayer(url: Bundle.main.url(forResource: workout.video, withExtension: "mp4")!))
-                }
-                HStack {
-                    Text("Attentions")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    Spacer()
-                }.padding(.top, 5)
-            }.padding(.horizontal)
+                    }.padding(.top)
+                }.padding(.horizontal)
+            }
         }
     }
 }
