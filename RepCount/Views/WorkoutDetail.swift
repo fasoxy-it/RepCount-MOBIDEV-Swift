@@ -121,7 +121,7 @@ struct WorkoutDetail: View {
                     }
                     
                     HStack {
-                        NavigationLink(destination: ContentView()) {
+                        NavigationLink(destination: WorkoutControl(workout: workout)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 5)
                                     .foregroundColor(Color("Green"))

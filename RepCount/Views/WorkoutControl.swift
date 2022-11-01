@@ -9,6 +9,10 @@ import SwiftUI
 
 struct WorkoutControl: View {
     
+    @State var isTimerRunning: Bool = true
+    @State var timerCount: Double = 0.0
+    @State var timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
+    
     var workout: Workout
     
     var body: some View {
@@ -28,9 +32,14 @@ struct WorkoutControl: View {
                     Image(systemName: "stopwatch.fill")
                         .font(.system(size: 22))
                         .foregroundColor(.yellow)
-                    Text("00.00.00")
+                    Text("\(formatTimerMmSsMSms(counter: timerCount))")
                         .font(.title3)
                         .foregroundColor(.yellow)
+                        .onReceive(timer) { time in
+                            if isTimerRunning {
+                                timerCount += 0.01
+                            }
+                        }
                     Spacer()
                 }.padding(.bottom, 5)
                 HStack {
@@ -61,15 +70,32 @@ struct WorkoutControl: View {
                 }.padding(.bottom, 5)
                 HStack {
                     Spacer()
-                    Image(systemName: "pause.circle.fill")
-                        .font(.system(size: 38))
-                        .foregroundColor(.white)
+                    if isTimerRunning {
+                        Image(systemName: "pause.circle.fill")
+                            .font(.system(size: 38))
+                            .foregroundColor(.white)
+                            .onTapGesture {
+                                timer.upstream.connect().cancel()
+                                isTimerRunning = false
+                            }
+                    } else {
+                        Image(systemName: "play.circle.fill")
+                            .font(.system(size: 38))
+                            .foregroundColor(.white)
+                            .onTapGesture {
+                                timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
+                                isTimerRunning = true
+                            }
+                    }
                 }.padding(.bottom, 5)
                 HStack {
                     Spacer()
                     Image(systemName: "x.circle.fill")
                         .font(.system(size: 38))
                         .foregroundColor(.white)
+                        .onTapGesture {
+                            // Finish
+                        }
                 }
             }.padding(.trailing, 20)
         }.padding()
@@ -84,4 +110,11 @@ struct WorkoutControl_Previews: PreviewProvider {
             WorkoutControl(workout: Workouts().workouts[2])
         }
     }
+}
+
+func formatTimerMmSsMSms(counter: Double) -> String {
+    let minutes = Int(counter) / 60 % 60
+    let seconds = Int(counter) % 60
+    let milliseconds = Int(counter*1000) % 1000
+    return String(format: "%02d:%02d:%02d", minutes, seconds, milliseconds)
 }
