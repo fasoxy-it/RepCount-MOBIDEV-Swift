@@ -10,8 +10,6 @@ import AVKit
 
 struct WorkoutDetail: View {
     
-    @State private var player = AVPlayer()
-    
     var workout: Workout
     
     var body: some View {
@@ -84,6 +82,9 @@ struct WorkoutDetail: View {
                                 HStack {
                                     VideoPlayer(player: AVPlayer(url: Bundle.main.url(forResource: workout.video, withExtension: "mp4")!))
                                         .frame(height: 205)
+                                        .onAppear() {
+                                            AVPlayer().play()
+                                        }
                                 }
                             }.padding(.vertical, 5)
                             
