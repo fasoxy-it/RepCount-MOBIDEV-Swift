@@ -19,6 +19,7 @@
 		0BB09C03290ADA06001ECC1E /* WorkoutRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09C02290ADA06001ECC1E /* WorkoutRow.swift */; };
 		0BB09C05290ADB46001ECC1E /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09C04290ADB46001ECC1E /* WorkoutList.swift */; };
 		0BB09C07290ADD7E001ECC1E /* WorkoutDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09C06290ADD7E001ECC1E /* WorkoutDetail.swift */; };
+		0BB1C65F29102746008698A5 /* WorkoutControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1C65E29102746008698A5 /* WorkoutControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		0BB09C02290ADA06001ECC1E /* WorkoutRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutRow.swift; sourceTree = "<group>"; };
 		0BB09C04290ADB46001ECC1E /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
 		0BB09C06290ADD7E001ECC1E /* WorkoutDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetail.swift; sourceTree = "<group>"; };
+		0BB1C65E29102746008698A5 /* WorkoutControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				0BB09C02290ADA06001ECC1E /* WorkoutRow.swift */,
 				0BB09C04290ADB46001ECC1E /* WorkoutList.swift */,
 				0BB09C06290ADD7E001ECC1E /* WorkoutDetail.swift */,
+				0BB1C65E29102746008698A5 /* WorkoutControl.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				0BB09C07290ADD7E001ECC1E /* WorkoutDetail.swift in Sources */,
 				0BB09BEA290AD6E8001ECC1E /* ContentView.swift in Sources */,
 				0BB09C03290ADA06001ECC1E /* WorkoutRow.swift in Sources */,
+				0BB1C65F29102746008698A5 /* WorkoutControl.swift in Sources */,
 				0BB09BE8290AD6E8001ECC1E /* AppDelegate.swift in Sources */,
 				0BB09C05290ADB46001ECC1E /* WorkoutList.swift in Sources */,
 				0BB09BEC290AD6E8001ECC1E /* Experience.rcproject in Sources */,
