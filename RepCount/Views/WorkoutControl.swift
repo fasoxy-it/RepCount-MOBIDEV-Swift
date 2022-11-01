@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealityKit
 
 struct WorkoutControl: View {
     
@@ -17,89 +18,114 @@ struct WorkoutControl: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(Color("Gray"))
-                .blendMode(.destinationOut)
-            VStack {
-                HStack {
-                    Text(workout.name)
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    Spacer()
-                }.padding(.bottom, 10)
-                HStack {
-                    Image(systemName: "stopwatch.fill")
-                        .font(.system(size: 22))
-                        .foregroundColor(.yellow)
-                    Text("\(formatTimerMmSsMSms(counter: timerCount))")
-                        .font(.title3)
-                        .foregroundColor(.yellow)
-                        .onReceive(timer) { time in
-                            if isTimerRunning {
-                                timerCount += 0.01
+            ARViewContainer()
+                .edgesIgnoringSafeArea(.all)
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .foregroundColor(Color("Gray"))
+                    .opacity(0.8)
+                VStack {
+                    HStack {
+                        Text(workout.name)
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        Spacer()
+                    }.padding(.bottom, 10)
+                    HStack {
+                        Image(systemName: "stopwatch.fill")
+                            .font(.system(size: 22))
+                            .foregroundColor(.yellow)
+                        Text("\(formatTimerMmSsMSms(counter: timerCount))")
+                            .font(.title3)
+                            .foregroundColor(.yellow)
+                            .onReceive(timer) { time in
+                                if isTimerRunning {
+                                    timerCount += 0.01
+                                }
                             }
+                        Spacer()
+                    }.padding(.bottom, 5)
+                    HStack {
+                        Image(systemName: "arrow.clockwise.circle.fill")
+                            .font(.system(size: 22))
+                            .foregroundColor(.green)
+                        Text("00")
+                            .font(.title3)
+                            .foregroundColor(.green)
+                        Spacer()
+                    }.padding(.bottom, 5)
+                    HStack {
+                        Image(systemName: "exclamationmark.circle.fill")
+                            .font(.system(size: 22))
+                            .foregroundColor(.red)
+                        Text("00")
+                            .font(.title3)
+                            .foregroundColor(.red)
+                        Spacer()
+                    }
+                }.padding(.leading, 20)
+                VStack {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
+                            .font(.system(size: 38))
+                            .foregroundColor(.white)
+                    }.padding(.bottom, 5)
+                    HStack {
+                        Spacer()
+                        if isTimerRunning {
+                            Image(systemName: "pause.circle.fill")
+                                .font(.system(size: 38))
+                                .foregroundColor(.white)
+                                .onTapGesture {
+                                    timer.upstream.connect().cancel()
+                                    isTimerRunning = false
+                                }
+                        } else {
+                            Image(systemName: "play.circle.fill")
+                                .font(.system(size: 38))
+                                .foregroundColor(.white)
+                                .onTapGesture {
+                                    timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
+                                    isTimerRunning = true
+                                }
                         }
-                    Spacer()
-                }.padding(.bottom, 5)
-                HStack {
-                    Image(systemName: "arrow.clockwise.circle.fill")
-                        .font(.system(size: 22))
-                        .foregroundColor(.green)
-                    Text("00")
-                        .font(.title3)
-                        .foregroundColor(.green)
-                    Spacer()
-                }.padding(.bottom, 5)
-                HStack {
-                    Image(systemName: "exclamationmark.circle.fill")
-                        .font(.system(size: 22))
-                        .foregroundColor(.red)
-                    Text("00")
-                        .font(.title3)
-                        .foregroundColor(.red)
-                    Spacer()
-                }
-            }.padding(.leading, 20)
-            VStack {
-                HStack {
-                    Spacer()
-                    Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
-                        .font(.system(size: 38))
-                        .foregroundColor(.white)
-                }.padding(.bottom, 5)
-                HStack {
-                    Spacer()
-                    if isTimerRunning {
-                        Image(systemName: "pause.circle.fill")
+                    }.padding(.bottom, 5)
+                    HStack {
+                        Spacer()
+                        Image(systemName: "x.circle.fill")
                             .font(.system(size: 38))
                             .foregroundColor(.white)
                             .onTapGesture {
-                                timer.upstream.connect().cancel()
-                                isTimerRunning = false
-                            }
-                    } else {
-                        Image(systemName: "play.circle.fill")
-                            .font(.system(size: 38))
-                            .foregroundColor(.white)
-                            .onTapGesture {
-                                timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
-                                isTimerRunning = true
+                                // Finish
                             }
                     }
-                }.padding(.bottom, 5)
-                HStack {
-                    Spacer()
-                    Image(systemName: "x.circle.fill")
-                        .font(.system(size: 38))
-                        .foregroundColor(.white)
-                        .onTapGesture {
-                            // Finish
-                        }
-                }
-            }.padding(.trailing, 20)
-        }.padding()
+                }.padding(.trailing, 20)
+            }.padding()
+            
+        }
     }
+}
+
+struct ARViewContainer: UIViewRepresentable {
+    
+    func makeUIView(context: Context) -> ARView {
+        
+        let arView = ARView(frame: .zero)
+        
+        // Load the "Box" scene from the "Experience" Reality File
+        let boxAnchor = try! Experience.loadBox()
+        
+        // Add the box anchor to the scene
+        arView.scene.anchors.append(boxAnchor)
+        
+        return arView
+        
+    }
+    
+    func updateUIView(_ uiView: ARView, context: Context) {}
+    
 }
 
 struct WorkoutControl_Previews: PreviewProvider {
