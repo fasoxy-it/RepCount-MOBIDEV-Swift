@@ -14,11 +14,13 @@ struct WorkoutControl: View {
     @State var timerCount: Double = 0.0
     @State var timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
+    @ObservedObject var arViewModel : ARViewModel = ARViewModel()
+    
     var workout: Workout
     
     var body: some View {
         ZStack {
-            ARViewContainer()
+            ARViewContainer(arViewModel: arViewModel)
                 .edgesIgnoringSafeArea(.all)
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
@@ -71,6 +73,9 @@ struct WorkoutControl: View {
                         Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
                             .font(.system(size: 38))
                             .foregroundColor(.white)
+                            .onTapGesture {
+                                arViewModel.switchCamera()
+                            }
                     }.padding(.bottom, 5)
                     HStack {
                         Spacer()
@@ -110,17 +115,11 @@ struct WorkoutControl: View {
 
 struct ARViewContainer: UIViewRepresentable {
     
+    var arViewModel: ARViewModel
+    
     func makeUIView(context: Context) -> ARView {
         
-        let arView = ARView(frame: .zero)
-        
-        // Load the "Box" scene from the "Experience" Reality File
-        let boxAnchor = try! Experience.loadBox()
-        
-        // Add the box anchor to the scene
-        arView.scene.anchors.append(boxAnchor)
-        
-        return arView
+        return arViewModel.arView
         
     }
     

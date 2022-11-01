@@ -20,6 +20,8 @@
 		0BB09C05290ADB46001ECC1E /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09C04290ADB46001ECC1E /* WorkoutList.swift */; };
 		0BB09C07290ADD7E001ECC1E /* WorkoutDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09C06290ADD7E001ECC1E /* WorkoutDetail.swift */; };
 		0BB1C65F29102746008698A5 /* WorkoutControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1C65E29102746008698A5 /* WorkoutControl.swift */; };
+		0BEF728329119C7500DCAAA2 /* ARModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF728229119C7500DCAAA2 /* ARModel.swift */; };
+		0BEF728529119DA700DCAAA2 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF728429119DA700DCAAA2 /* ARViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		0BB09C04290ADB46001ECC1E /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
 		0BB09C06290ADD7E001ECC1E /* WorkoutDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetail.swift; sourceTree = "<group>"; };
 		0BB1C65E29102746008698A5 /* WorkoutControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutControl.swift; sourceTree = "<group>"; };
+		0BEF728229119C7500DCAAA2 /* ARModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModel.swift; sourceTree = "<group>"; };
+		0BEF728429119DA700DCAAA2 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				0BB09BFA290AD852001ECC1E /* Model.swift */,
+				0BEF728229119C7500DCAAA2 /* ARModel.swift */,
+				0BEF728429119DA700DCAAA2 /* ARViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,7 +202,9 @@
 				0BB09C03290ADA06001ECC1E /* WorkoutRow.swift in Sources */,
 				0BB1C65F29102746008698A5 /* WorkoutControl.swift in Sources */,
 				0BB09BE8290AD6E8001ECC1E /* AppDelegate.swift in Sources */,
+				0BEF728529119DA700DCAAA2 /* ARViewModel.swift in Sources */,
 				0BB09C05290ADB46001ECC1E /* WorkoutList.swift in Sources */,
+				0BEF728329119C7500DCAAA2 /* ARModel.swift in Sources */,
 				0BB09BEC290AD6E8001ECC1E /* Experience.rcproject in Sources */,
 				0BB09BFB290AD852001ECC1E /* Model.swift in Sources */,
 			);
