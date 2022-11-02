@@ -22,6 +22,7 @@
 		0BB1C65F29102746008698A5 /* WorkoutControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1C65E29102746008698A5 /* WorkoutControl.swift */; };
 		0BEF728329119C7500DCAAA2 /* ARModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF728229119C7500DCAAA2 /* ARModel.swift */; };
 		0BEF728529119DA700DCAAA2 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF728429119DA700DCAAA2 /* ARViewModel.swift */; };
+		0BEF728729126ECF00DCAAA2 /* WorkoutSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF728629126ECF00DCAAA2 /* WorkoutSummary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		0BB1C65E29102746008698A5 /* WorkoutControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutControl.swift; sourceTree = "<group>"; };
 		0BEF728229119C7500DCAAA2 /* ARModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModel.swift; sourceTree = "<group>"; };
 		0BEF728429119DA700DCAAA2 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
+		0BEF728629126ECF00DCAAA2 /* WorkoutSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSummary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				0BB09C04290ADB46001ECC1E /* WorkoutList.swift */,
 				0BB09C06290ADD7E001ECC1E /* WorkoutDetail.swift */,
 				0BB1C65E29102746008698A5 /* WorkoutControl.swift */,
+				0BEF728629126ECF00DCAAA2 /* WorkoutSummary.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BEF728729126ECF00DCAAA2 /* WorkoutSummary.swift in Sources */,
 				0BB09C07290ADD7E001ECC1E /* WorkoutDetail.swift in Sources */,
 				0BB09BEA290AD6E8001ECC1E /* ContentView.swift in Sources */,
 				0BB09C03290ADA06001ECC1E /* WorkoutRow.swift in Sources */,
