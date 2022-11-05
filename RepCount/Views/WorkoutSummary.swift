@@ -168,6 +168,7 @@ struct WorkoutSummary: View {
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)
                             }
+                        }
                     }.padding(.top)
                 }.padding()
             }
