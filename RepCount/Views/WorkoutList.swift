@@ -10,22 +10,22 @@ import SwiftUI
 struct WorkoutList: View {
     var body: some View {
         NavigationView {
-            List(Workouts().workouts) { workout in
-                NavigationLink {
-                    WorkoutDetail(workout: workout)
-                } label: {
-                    WorkoutRow(workout: workout)
+            ZStack {
+                Color.black.edgesIgnoringSafeArea(.all)
+                ScrollView {
+                    ForEach (Workouts().workouts) { workout in
+                        NavigationLink {
+                            WorkoutDetail(workout: workout)
+                        } label: {
+                            WorkoutRow(workout: workout)
+                        }
+                    }
                 }
-                //.listRowBackground(Color.black)
-                .listRowSeparator(.hidden)
+                    .padding(.horizontal)
+                    .navigationTitle("Workouts")
             }
-            .listStyle(.inset)
-            .navigationBarTitle("Workouts")
-            //.toolbarColorScheme(.dark, for: .navigationBar)
-            //.toolbarBackground(Color.black, for: .navigationBar)
-            //.toolbarBackground(.visible, for: .navigationBar)
         }
-        .environment(\.colorScheme, .dark)
+        .toolbar(.hidden)
         .accentColor(.white)
     }
 }

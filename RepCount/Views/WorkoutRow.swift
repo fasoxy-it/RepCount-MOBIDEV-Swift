@@ -19,7 +19,7 @@ struct WorkoutRow: View {
                 VStack {
                     ZStack {
                         Circle()
-                            .fill(Color("Color").gradient)
+                            .fill(Color("GreenDark").gradient)
                             .frame(width: 45, height: 45)
                         Image(systemName: workout.logo)
                             .font(.system(size: 28))
@@ -41,9 +41,13 @@ struct WorkoutRow: View {
                         Spacer()
                     }
                 }
+                VStack {
+                    Image(systemName: "chevron.right")
+                        .font(.system(size: 17))
+                        .foregroundColor(.gray)
+                }
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 5)
+            .padding(.all, 10)
         }
         .clipShape(RoundedRectangle(cornerRadius: 15))
     }

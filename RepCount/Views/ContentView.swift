@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView : View {
     var body: some View {
-        ZStack {
-            WorkoutList()
-        }.edgesIgnoringSafeArea(.all)
+        
+        WorkoutList()
+       
     }
 }
 

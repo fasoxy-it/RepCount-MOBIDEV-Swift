@@ -10,6 +10,8 @@ import AVKit
 
 struct WorkoutDetail: View {
     
+    @State var player = AVPlayer()
+    
     var workout: Workout
     
     var body: some View {
@@ -22,7 +24,7 @@ struct WorkoutDetail: View {
                         VStack {
                             ZStack {
                                 Circle()
-                                    .fill(Color("Color").gradient)
+                                    .fill(Color("GreenDark").gradient)
                                     .frame(width: 85, height: 85)
                                 Image(systemName: workout.logo)
                                     .font(.system(size: 40))
@@ -39,7 +41,7 @@ struct WorkoutDetail: View {
                             }.padding(.bottom, 1)
                             HStack {
                                 Image(systemName: "figure.stand")
-                                    .font(.system(size: 17))
+                                    .font(.system(size: 20))
                                     .foregroundColor(.indigo)
                                 Text(workout.muscle)
                                     .font(.body)
@@ -50,12 +52,13 @@ struct WorkoutDetail: View {
                             }.padding(.bottom, 1)
                             HStack {
                                 Image(systemName: "flame.fill")
-                                    .font(.system(size: 17))
+                                    .font(.system(size: 15))
                                     .foregroundColor(.orange)
                                 Text(workout.intensity)
                                     .font(.body)
                                     .fontWeight(.bold)
                                     .foregroundColor(.white)
+                                    .padding(.leading, 4)
                                 Spacer()
                             }
                         }.padding(.leading, 10)
@@ -80,10 +83,11 @@ struct WorkoutDetail: View {
                             .padding(.top, 1)
                             VStack {
                                 HStack {
-                                    VideoPlayer(player: AVPlayer(url: Bundle.main.url(forResource: workout.video, withExtension: "mp4")!))
+                                    VideoPlayer(player: player)
                                         .frame(height: 205)
                                         .onAppear() {
-                                            AVPlayer().play()
+                                            player = AVPlayer(url: Bundle.main.url(forResource: workout.video, withExtension: "mp4")!)
+                                            player.play()
                                         }
                                 }
                             }.padding(.vertical, 5)

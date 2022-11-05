@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3B2BBE29155559006D2BBF /* WorkoutMistakeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3B2BBD29155559006D2BBF /* WorkoutMistakeRow.swift */; };
 		0BB09BE8290AD6E8001ECC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09BE7290AD6E8001ECC1E /* AppDelegate.swift */; };
 		0BB09BEA290AD6E8001ECC1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09BE9290AD6E8001ECC1E /* ContentView.swift */; };
 		0BB09BEC290AD6E8001ECC1E /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09BEB290AD6E8001ECC1E /* Experience.rcproject */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B3B2BBD29155559006D2BBF /* WorkoutMistakeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutMistakeRow.swift; sourceTree = "<group>"; };
 		0BB09BE4290AD6E8001ECC1E /* RepCount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepCount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB09BE7290AD6E8001ECC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BB09BE9290AD6E8001ECC1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				0BB09C06290ADD7E001ECC1E /* WorkoutDetail.swift */,
 				0BB1C65E29102746008698A5 /* WorkoutControl.swift */,
 				0BEF728629126ECF00DCAAA2 /* WorkoutSummary.swift */,
+				0B3B2BBD29155559006D2BBF /* WorkoutMistakeRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				0BEF728329119C7500DCAAA2 /* ARModel.swift in Sources */,
 				0BB09BEC290AD6E8001ECC1E /* Experience.rcproject in Sources */,
 				0BB09BFB290AD852001ECC1E /* Model.swift in Sources */,
+				0B3B2BBE29155559006D2BBF /* WorkoutMistakeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
