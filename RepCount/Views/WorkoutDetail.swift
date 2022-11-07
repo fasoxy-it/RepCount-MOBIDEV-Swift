@@ -138,8 +138,10 @@ struct WorkoutDetail: View {
                             }
                         }
                     }.padding(.top)
-                }.padding(.horizontal)
-            }
+                }.padding()
+                    //.navigationTitle("")
+                    //.navigationBarTitleDisplayMode(.inline)
+            }//.padding(.top)
         }
     }
 }

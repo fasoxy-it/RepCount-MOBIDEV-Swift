@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WorkoutMistakeRow: View {
     
-    var attention: String
+    var mistake: String
 
     @State private var showDetails = false
     
@@ -40,25 +40,26 @@ struct WorkoutMistakeRow: View {
                         
                     }
                     VStack {
-                        Text("Incline")
+                        Text(mistake)
                             .font(.body)
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                     }
+                    Spacer()
                     VStack {
                         ZStack {
                             RoundedRectangle(cornerRadius: 15)
                                 .foregroundColor(Color("Red"))
-                                .frame(height: 28)
+                                .frame(width: 110, height: 28)
                             Text("?? mistakes")
                                 .font(.subheadline)
                                 .foregroundColor(.white)
                         }
-                    }.padding(.leading, 170)
+                    }.padding(.leading)
                 }
                 if showDetails {
                     HStack {
-                        Text(attention)
+                        Text(mistake)
                             .font(.body)
                             .foregroundColor(.white)
                             .fixedSize(horizontal: false, vertical: true)
@@ -73,6 +74,6 @@ struct WorkoutMistakeRow: View {
 
 struct WorkoutMistakeRow_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutMistakeRow(attention: Workouts().workouts[0].attentions[0])
+        WorkoutMistakeRow(mistake: Workouts().workouts[1].mistakes[0])
     }
 }

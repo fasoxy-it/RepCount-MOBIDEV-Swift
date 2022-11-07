@@ -7,6 +7,7 @@
 
 import SwiftUI
 import RealityKit
+import AVFoundation
 
 struct WorkoutControl: View {
     
@@ -15,6 +16,8 @@ struct WorkoutControl: View {
     @State var timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
     @ObservedObject var arViewModel : ARViewModel = ARViewModel()
+    
+    let synthesizer = AVSpeechSynthesizer()
     
     var workout: Workout
     
@@ -89,6 +92,9 @@ struct WorkoutControl: View {
                                             .font(.system(size: 38))
                                             .foregroundColor(.white)
                                             .onTapGesture {
+                                                let utterance = AVSpeechUtterance(string: "Stop")
+                                                utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                                                synthesizer.speak(utterance)
                                                 timer.upstream.connect().cancel()
                                                 isTimerRunning = false
                                             }
@@ -97,6 +103,9 @@ struct WorkoutControl: View {
                                             .font(.system(size: 38))
                                             .foregroundColor(.white)
                                             .onTapGesture {
+                                                let utterance = AVSpeechUtterance(string: "Play")
+                                                utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                                                synthesizer.speak(utterance)
                                                 timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
                                                 isTimerRunning = true
                                             }

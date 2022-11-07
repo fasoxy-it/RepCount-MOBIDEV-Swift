@@ -13,7 +13,7 @@ struct WorkoutRow: View {
     
     var body: some View {
         ZStack {
-            Rectangle()
+            RoundedRectangle(cornerRadius: 15)
                 .foregroundColor(Color("Gray"))
             HStack {
                 VStack {
@@ -47,9 +47,8 @@ struct WorkoutRow: View {
                         .foregroundColor(.gray)
                 }
             }
-            .padding(.all, 10)
+            .padding(.all, 20)
         }
-        .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }
 

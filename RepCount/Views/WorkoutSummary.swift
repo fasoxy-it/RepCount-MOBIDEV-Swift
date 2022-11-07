@@ -21,13 +21,6 @@ struct WorkoutSummary: View {
                 ScrollView {
                     VStack {
                         HStack {
-                            Text("Summary")
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                            Spacer()
-                        }
-                        HStack {
                             VStack {
                                 ZStack {
                                     Circle()
@@ -152,25 +145,27 @@ struct WorkoutSummary: View {
                                 .foregroundColor(.white)
                             Spacer()
                         }.padding(.top, 10)
-                        ForEach (workout.attentions, id: \.self) {
-                            attention in
-                            WorkoutMistakeRow(attention: attention)
+                        ForEach (workout.mistakes, id: \.self) {
+                            mistake in
+                            WorkoutMistakeRow(mistake: mistake)
                         }
-                    }
-                    HStack {
-                        NavigationLink(destination: ContentView()) {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 5)
-                                    .foregroundColor(Color("Green"))
-                                    .frame(height: 50)
-                                Text("Done")
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.black)
+                        HStack {
+                            NavigationLink(destination: ContentView()) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .foregroundColor(Color("Green"))
+                                        .frame(height: 50)
+                                    Text("Done")
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.black)
+                                }
                             }
-                        }
-                    }.padding(.top)
-                }.padding()
+                        }.padding(.top)
+                    }
+                    .padding()
+                    .navigationTitle("Summary")
+                }
             }
         }.toolbar(.hidden)
         

@@ -16,17 +16,18 @@ struct WorkoutList: View {
                     ForEach (Workouts().workouts) { workout in
                         NavigationLink {
                             WorkoutDetail(workout: workout)
+                                .navigationTitle("")
+                                .navigationBarTitleDisplayMode(.inline)
                         } label: {
                             WorkoutRow(workout: workout)
                         }
                     }
                 }
-                    .padding(.horizontal)
-                    .navigationTitle("Workouts")
+                .padding(.horizontal)
+                .navigationTitle("Workouts")
             }
         }
         .toolbar(.hidden)
-        .accentColor(.white)
     }
 }
 
