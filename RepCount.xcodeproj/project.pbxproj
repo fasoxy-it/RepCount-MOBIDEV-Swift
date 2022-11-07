@@ -21,6 +21,23 @@
 		0BB09C05290ADB46001ECC1E /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09C04290ADB46001ECC1E /* WorkoutList.swift */; };
 		0BB09C07290ADD7E001ECC1E /* WorkoutDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09C06290ADD7E001ECC1E /* WorkoutDetail.swift */; };
 		0BB1C65F29102746008698A5 /* WorkoutControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1C65E29102746008698A5 /* WorkoutControl.swift */; };
+		0BB9D36E2919578600DEB47F /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D36D2919578600DEB47F /* VideoCapture.swift */; };
+		0BB9D3712919589F00DEB47F /* AVCaptureDevice+FrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D3702919589F00DEB47F /* AVCaptureDevice+FrameRate.swift */; };
+		0BB9D373291958CF00DEB47F /* AvCaptureDeviceInput+Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D372291958CF00DEB47F /* AvCaptureDeviceInput+Camera.swift */; };
+		0BB9D375291958FA00DEB47F /* AVCaptureVideoDataOutput+PixelFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D374291958FA00DEB47F /* AVCaptureVideoDataOutput+PixelFormat.swift */; };
+		0BB9D3772919593300DEB47F /* VideoProcessingChain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D3762919593300DEB47F /* VideoProcessingChain.swift */; };
+		0BB9D37A2919597200DEB47F /* Pose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D3792919597200DEB47F /* Pose.swift */; };
+		0BB9D37D291959A600DEB47F /* Pose+Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D37C291959A600DEB47F /* Pose+Landmark.swift */; };
+		0BB9D37F291959C200DEB47F /* Pose+Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D37E291959C200DEB47F /* Pose+Connection.swift */; };
+		0BB9D381291959DE00DEB47F /* Pose+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D380291959DE00DEB47F /* Pose+Empty.swift */; };
+		0BB9D38329195A6300DEB47F /* ActionPrediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D38229195A6300DEB47F /* ActionPrediction.swift */; };
+		0BB9D38629195B3300DEB47F /* ExerciseClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D38529195B3300DEB47F /* ExerciseClassifier.mlmodel */; };
+		0BB9D38829195B9A00DEB47F /* ExerciseClassifier+Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D38729195B9A00DEB47F /* ExerciseClassifier+Singleton.swift */; };
+		0BB9D38A29195BAF00DEB47F /* ExerciseClassifier+Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D38929195BAF00DEB47F /* ExerciseClassifier+Label.swift */; };
+		0BB9D38C29195BD900DEB47F /* ExerciseClassifier+LabelCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D38B29195BD900DEB47F /* ExerciseClassifier+LabelCheck.swift */; };
+		0BB9D38E29195C0100DEB47F /* ExerciseClassifier+PredictAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D38D29195C0100DEB47F /* ExerciseClassifier+PredictAction.swift */; };
+		0BB9D39029195C2B00DEB47F /* ExerciseClassifier+FrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D38F29195C2B00DEB47F /* ExerciseClassifier+FrameRate.swift */; };
+		0BB9D39229195C5C00DEB47F /* PerformanceReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D39129195C5C00DEB47F /* PerformanceReporter.swift */; };
 		0BEF728329119C7500DCAAA2 /* ARModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF728229119C7500DCAAA2 /* ARModel.swift */; };
 		0BEF728529119DA700DCAAA2 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF728429119DA700DCAAA2 /* ARViewModel.swift */; };
 		0BEF728729126ECF00DCAAA2 /* WorkoutSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF728629126ECF00DCAAA2 /* WorkoutSummary.swift */; };
@@ -42,6 +59,23 @@
 		0BB09C04290ADB46001ECC1E /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
 		0BB09C06290ADD7E001ECC1E /* WorkoutDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetail.swift; sourceTree = "<group>"; };
 		0BB1C65E29102746008698A5 /* WorkoutControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutControl.swift; sourceTree = "<group>"; };
+		0BB9D36D2919578600DEB47F /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		0BB9D3702919589F00DEB47F /* AVCaptureDevice+FrameRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+FrameRate.swift"; sourceTree = "<group>"; };
+		0BB9D372291958CF00DEB47F /* AvCaptureDeviceInput+Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AvCaptureDeviceInput+Camera.swift"; sourceTree = "<group>"; };
+		0BB9D374291958FA00DEB47F /* AVCaptureVideoDataOutput+PixelFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureVideoDataOutput+PixelFormat.swift"; sourceTree = "<group>"; };
+		0BB9D3762919593300DEB47F /* VideoProcessingChain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoProcessingChain.swift; sourceTree = "<group>"; };
+		0BB9D3792919597200DEB47F /* Pose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
+		0BB9D37C291959A600DEB47F /* Pose+Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pose+Landmark.swift"; sourceTree = "<group>"; };
+		0BB9D37E291959C200DEB47F /* Pose+Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pose+Connection.swift"; sourceTree = "<group>"; };
+		0BB9D380291959DE00DEB47F /* Pose+Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pose+Empty.swift"; sourceTree = "<group>"; };
+		0BB9D38229195A6300DEB47F /* ActionPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionPrediction.swift; sourceTree = "<group>"; };
+		0BB9D38529195B3300DEB47F /* ExerciseClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ExerciseClassifier.mlmodel; sourceTree = "<group>"; };
+		0BB9D38729195B9A00DEB47F /* ExerciseClassifier+Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseClassifier+Singleton.swift"; sourceTree = "<group>"; };
+		0BB9D38929195BAF00DEB47F /* ExerciseClassifier+Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseClassifier+Label.swift"; sourceTree = "<group>"; };
+		0BB9D38B29195BD900DEB47F /* ExerciseClassifier+LabelCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseClassifier+LabelCheck.swift"; sourceTree = "<group>"; };
+		0BB9D38D29195C0100DEB47F /* ExerciseClassifier+PredictAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseClassifier+PredictAction.swift"; sourceTree = "<group>"; };
+		0BB9D38F29195C2B00DEB47F /* ExerciseClassifier+FrameRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseClassifier+FrameRate.swift"; sourceTree = "<group>"; };
+		0BB9D39129195C5C00DEB47F /* PerformanceReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceReporter.swift; sourceTree = "<group>"; };
 		0BEF728229119C7500DCAAA2 /* ARModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModel.swift; sourceTree = "<group>"; };
 		0BEF728429119DA700DCAAA2 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
 		0BEF728629126ECF00DCAAA2 /* WorkoutSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSummary.swift; sourceTree = "<group>"; };
@@ -78,9 +112,14 @@
 			isa = PBXGroup;
 			children = (
 				0BB09BE7290AD6E8001ECC1E /* AppDelegate.swift */,
+				0BB9D36F2919578B00DEB47F /* Video Capture */,
+				0BB9D3782919593C00DEB47F /* Video Processing Chain */,
+				0BB9D37B2919598600DEB47F /* Pose */,
+				0BB9D38429195A6800DEB47F /* Action Classifier */,
 				0BB09BF8290AD786001ECC1E /* Views */,
 				0BB09BF7290AD781001ECC1E /* Model */,
 				0BB09BF9290AD78A001ECC1E /* Resources */,
+				0BB9D39329195C6100DEB47F /* Utility */,
 				0BB09BEB290AD6E8001ECC1E /* Experience.rcproject */,
 				0BB09BED290AD6E9001ECC1E /* Assets.xcassets */,
 				0BB09BEF290AD6E9001ECC1E /* Preview Content */,
@@ -128,6 +167,58 @@
 				0BB09BFE290AD9B2001ECC1E /* squats.mp4 */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0BB9D36F2919578B00DEB47F /* Video Capture */ = {
+			isa = PBXGroup;
+			children = (
+				0BB9D36D2919578600DEB47F /* VideoCapture.swift */,
+				0BB9D3702919589F00DEB47F /* AVCaptureDevice+FrameRate.swift */,
+				0BB9D372291958CF00DEB47F /* AvCaptureDeviceInput+Camera.swift */,
+				0BB9D374291958FA00DEB47F /* AVCaptureVideoDataOutput+PixelFormat.swift */,
+			);
+			path = "Video Capture";
+			sourceTree = "<group>";
+		};
+		0BB9D3782919593C00DEB47F /* Video Processing Chain */ = {
+			isa = PBXGroup;
+			children = (
+				0BB9D3762919593300DEB47F /* VideoProcessingChain.swift */,
+			);
+			path = "Video Processing Chain";
+			sourceTree = "<group>";
+		};
+		0BB9D37B2919598600DEB47F /* Pose */ = {
+			isa = PBXGroup;
+			children = (
+				0BB9D3792919597200DEB47F /* Pose.swift */,
+				0BB9D37C291959A600DEB47F /* Pose+Landmark.swift */,
+				0BB9D37E291959C200DEB47F /* Pose+Connection.swift */,
+				0BB9D380291959DE00DEB47F /* Pose+Empty.swift */,
+			);
+			path = Pose;
+			sourceTree = "<group>";
+		};
+		0BB9D38429195A6800DEB47F /* Action Classifier */ = {
+			isa = PBXGroup;
+			children = (
+				0BB9D38229195A6300DEB47F /* ActionPrediction.swift */,
+				0BB9D38529195B3300DEB47F /* ExerciseClassifier.mlmodel */,
+				0BB9D38729195B9A00DEB47F /* ExerciseClassifier+Singleton.swift */,
+				0BB9D38929195BAF00DEB47F /* ExerciseClassifier+Label.swift */,
+				0BB9D38B29195BD900DEB47F /* ExerciseClassifier+LabelCheck.swift */,
+				0BB9D38D29195C0100DEB47F /* ExerciseClassifier+PredictAction.swift */,
+				0BB9D38F29195C2B00DEB47F /* ExerciseClassifier+FrameRate.swift */,
+			);
+			path = "Action Classifier";
+			sourceTree = "<group>";
+		};
+		0BB9D39329195C6100DEB47F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				0BB9D39129195C5C00DEB47F /* PerformanceReporter.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,17 +294,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BB9D39029195C2B00DEB47F /* ExerciseClassifier+FrameRate.swift in Sources */,
+				0BB9D3772919593300DEB47F /* VideoProcessingChain.swift in Sources */,
+				0BB9D38A29195BAF00DEB47F /* ExerciseClassifier+Label.swift in Sources */,
 				0BEF728729126ECF00DCAAA2 /* WorkoutSummary.swift in Sources */,
+				0BB9D38E29195C0100DEB47F /* ExerciseClassifier+PredictAction.swift in Sources */,
 				0BB09C07290ADD7E001ECC1E /* WorkoutDetail.swift in Sources */,
 				0BB09BEA290AD6E8001ECC1E /* ContentView.swift in Sources */,
 				0BB09C03290ADA06001ECC1E /* WorkoutRow.swift in Sources */,
+				0BB9D38C29195BD900DEB47F /* ExerciseClassifier+LabelCheck.swift in Sources */,
+				0BB9D373291958CF00DEB47F /* AvCaptureDeviceInput+Camera.swift in Sources */,
+				0BB9D37A2919597200DEB47F /* Pose.swift in Sources */,
+				0BB9D381291959DE00DEB47F /* Pose+Empty.swift in Sources */,
+				0BB9D36E2919578600DEB47F /* VideoCapture.swift in Sources */,
 				0BB1C65F29102746008698A5 /* WorkoutControl.swift in Sources */,
 				0BB09BE8290AD6E8001ECC1E /* AppDelegate.swift in Sources */,
+				0BB9D37F291959C200DEB47F /* Pose+Connection.swift in Sources */,
+				0BB9D37D291959A600DEB47F /* Pose+Landmark.swift in Sources */,
+				0BB9D39229195C5C00DEB47F /* PerformanceReporter.swift in Sources */,
+				0BB9D375291958FA00DEB47F /* AVCaptureVideoDataOutput+PixelFormat.swift in Sources */,
+				0BB9D3712919589F00DEB47F /* AVCaptureDevice+FrameRate.swift in Sources */,
 				0BEF728529119DA700DCAAA2 /* ARViewModel.swift in Sources */,
+				0BB9D38829195B9A00DEB47F /* ExerciseClassifier+Singleton.swift in Sources */,
 				0BB09C05290ADB46001ECC1E /* WorkoutList.swift in Sources */,
 				0BEF728329119C7500DCAAA2 /* ARModel.swift in Sources */,
 				0BB09BEC290AD6E8001ECC1E /* Experience.rcproject in Sources */,
 				0BB09BFB290AD852001ECC1E /* Model.swift in Sources */,
+				0BB9D38629195B3300DEB47F /* ExerciseClassifier.mlmodel in Sources */,
+				0BB9D38329195A6300DEB47F /* ActionPrediction.swift in Sources */,
 				0B3B2BBE29155559006D2BBF /* WorkoutMistakeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
