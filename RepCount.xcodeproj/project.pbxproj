@@ -10,7 +10,6 @@
 		0B3B2BBE29155559006D2BBF /* WorkoutMistakeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3B2BBD29155559006D2BBF /* WorkoutMistakeRow.swift */; };
 		0BB09BE8290AD6E8001ECC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09BE7290AD6E8001ECC1E /* AppDelegate.swift */; };
 		0BB09BEA290AD6E8001ECC1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09BE9290AD6E8001ECC1E /* ContentView.swift */; };
-		0BB09BEC290AD6E8001ECC1E /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09BEB290AD6E8001ECC1E /* Experience.rcproject */; };
 		0BB09BEE290AD6E9001ECC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB09BED290AD6E9001ECC1E /* Assets.xcassets */; };
 		0BB09BF1290AD6E9001ECC1E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB09BF0290AD6E9001ECC1E /* Preview Assets.xcassets */; };
 		0BB09BFB290AD852001ECC1E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09BFA290AD852001ECC1E /* Model.swift */; };
@@ -38,8 +37,8 @@
 		0BB9D38E29195C0100DEB47F /* ExerciseClassifier+PredictAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D38D29195C0100DEB47F /* ExerciseClassifier+PredictAction.swift */; };
 		0BB9D39029195C2B00DEB47F /* ExerciseClassifier+FrameRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D38F29195C2B00DEB47F /* ExerciseClassifier+FrameRate.swift */; };
 		0BB9D39229195C5C00DEB47F /* PerformanceReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D39129195C5C00DEB47F /* PerformanceReporter.swift */; };
-		0BEF728329119C7500DCAAA2 /* ARModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF728229119C7500DCAAA2 /* ARModel.swift */; };
-		0BEF728529119DA700DCAAA2 /* ARViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF728429119DA700DCAAA2 /* ARViewModel.swift */; };
+		0BB9D3AE291987E000DEB47F /* ViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB9D3AD291987E000DEB47F /* ViewWrapper.swift */; };
+		0BEA5AEE291D2B6D00CF7C1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEA5AED291D2B6D00CF7C1F /* ViewController.swift */; };
 		0BEF728729126ECF00DCAAA2 /* WorkoutSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEF728629126ECF00DCAAA2 /* WorkoutSummary.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		0BB09BE4290AD6E8001ECC1E /* RepCount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepCount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB09BE7290AD6E8001ECC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BB09BE9290AD6E8001ECC1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0BB09BEB290AD6E8001ECC1E /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		0BB09BED290AD6E9001ECC1E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BB09BF0290AD6E9001ECC1E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0BB09BFA290AD852001ECC1E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -76,8 +74,8 @@
 		0BB9D38D29195C0100DEB47F /* ExerciseClassifier+PredictAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseClassifier+PredictAction.swift"; sourceTree = "<group>"; };
 		0BB9D38F29195C2B00DEB47F /* ExerciseClassifier+FrameRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseClassifier+FrameRate.swift"; sourceTree = "<group>"; };
 		0BB9D39129195C5C00DEB47F /* PerformanceReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceReporter.swift; sourceTree = "<group>"; };
-		0BEF728229119C7500DCAAA2 /* ARModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARModel.swift; sourceTree = "<group>"; };
-		0BEF728429119DA700DCAAA2 /* ARViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewModel.swift; sourceTree = "<group>"; };
+		0BB9D3AD291987E000DEB47F /* ViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewWrapper.swift; sourceTree = "<group>"; };
+		0BEA5AED291D2B6D00CF7C1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0BEF728629126ECF00DCAAA2 /* WorkoutSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSummary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +118,6 @@
 				0BB09BF7290AD781001ECC1E /* Model */,
 				0BB09BF9290AD78A001ECC1E /* Resources */,
 				0BB9D39329195C6100DEB47F /* Utility */,
-				0BB09BEB290AD6E8001ECC1E /* Experience.rcproject */,
 				0BB09BED290AD6E9001ECC1E /* Assets.xcassets */,
 				0BB09BEF290AD6E9001ECC1E /* Preview Content */,
 			);
@@ -139,8 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				0BB09BFA290AD852001ECC1E /* Model.swift */,
-				0BEF728229119C7500DCAAA2 /* ARModel.swift */,
-				0BEF728429119DA700DCAAA2 /* ARViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +150,8 @@
 				0BB1C65E29102746008698A5 /* WorkoutControl.swift */,
 				0BEF728629126ECF00DCAAA2 /* WorkoutSummary.swift */,
 				0B3B2BBD29155559006D2BBF /* WorkoutMistakeRow.swift */,
+				0BEA5AED291D2B6D00CF7C1F /* ViewController.swift */,
+				0BB9D3AD291987E000DEB47F /* ViewWrapper.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -299,6 +296,7 @@
 				0BB9D38A29195BAF00DEB47F /* ExerciseClassifier+Label.swift in Sources */,
 				0BEF728729126ECF00DCAAA2 /* WorkoutSummary.swift in Sources */,
 				0BB9D38E29195C0100DEB47F /* ExerciseClassifier+PredictAction.swift in Sources */,
+				0BEA5AEE291D2B6D00CF7C1F /* ViewController.swift in Sources */,
 				0BB09C07290ADD7E001ECC1E /* WorkoutDetail.swift in Sources */,
 				0BB09BEA290AD6E8001ECC1E /* ContentView.swift in Sources */,
 				0BB09C03290ADA06001ECC1E /* WorkoutRow.swift in Sources */,
@@ -314,14 +312,12 @@
 				0BB9D39229195C5C00DEB47F /* PerformanceReporter.swift in Sources */,
 				0BB9D375291958FA00DEB47F /* AVCaptureVideoDataOutput+PixelFormat.swift in Sources */,
 				0BB9D3712919589F00DEB47F /* AVCaptureDevice+FrameRate.swift in Sources */,
-				0BEF728529119DA700DCAAA2 /* ARViewModel.swift in Sources */,
 				0BB9D38829195B9A00DEB47F /* ExerciseClassifier+Singleton.swift in Sources */,
 				0BB09C05290ADB46001ECC1E /* WorkoutList.swift in Sources */,
-				0BEF728329119C7500DCAAA2 /* ARModel.swift in Sources */,
-				0BB09BEC290AD6E8001ECC1E /* Experience.rcproject in Sources */,
 				0BB09BFB290AD852001ECC1E /* Model.swift in Sources */,
 				0BB9D38629195B3300DEB47F /* ExerciseClassifier.mlmodel in Sources */,
 				0BB9D38329195A6300DEB47F /* ActionPrediction.swift in Sources */,
+				0BB9D3AE291987E000DEB47F /* ViewWrapper.swift in Sources */,
 				0B3B2BBE29155559006D2BBF /* WorkoutMistakeRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

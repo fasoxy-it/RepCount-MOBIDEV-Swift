@@ -15,17 +15,22 @@ struct WorkoutControl: View {
     @State var timerCount: Double = 0.0
     @State var timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
-    @ObservedObject var arViewModel : ARViewModel = ARViewModel()
-    
     let synthesizer = AVSpeechSynthesizer()
     
     var workout: Workout
     
     var body: some View {
+        
         NavigationView {
             ZStack {
-                ARViewContainer(arViewModel: arViewModel)
+                ViewWrapper()
                     .edgesIgnoringSafeArea(.all)
+                //GeometryReader { geo in
+                //    CameraViewWrapper(poseEstimator: poseEstimator)
+                //    StickFigureView(poseEstimator: poseEstimator, size: geo.size)
+                //}
+                //ARViewContainer(arViewModel: arViewModel)
+                    //.edgesIgnoringSafeArea(.all)
                 VStack {
                     Spacer()
                     HStack {
@@ -82,7 +87,7 @@ struct WorkoutControl: View {
                                         .font(.system(size: 38))
                                         .foregroundColor(.white)
                                         .onTapGesture {
-                                            arViewModel.switchCamera()
+                                            //
                                         }
                                 }.padding(.bottom, 5)
                                 HStack {
@@ -128,20 +133,6 @@ struct WorkoutControl: View {
             }
         }.toolbar(.hidden)
     }
-}
-
-struct ARViewContainer: UIViewRepresentable {
-    
-    var arViewModel: ARViewModel
-    
-    func makeUIView(context: Context) -> ARView {
-        
-        return arViewModel.arView
-        
-    }
-    
-    func updateUIView(_ uiView: ARView, context: Context) {}
-    
 }
 
 struct WorkoutControl_Previews: PreviewProvider {
