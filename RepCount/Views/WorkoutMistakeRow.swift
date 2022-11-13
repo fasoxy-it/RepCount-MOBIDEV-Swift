@@ -10,6 +10,7 @@ import SwiftUI
 struct WorkoutMistakeRow: View {
     
     var mistake: String
+    var count: Int
 
     @State private var showDetails = false
     
@@ -51,7 +52,7 @@ struct WorkoutMistakeRow: View {
                             RoundedRectangle(cornerRadius: 15)
                                 .foregroundColor(Color("Red"))
                                 .frame(width: 110, height: 28)
-                            Text("?? mistakes")
+                            Text("\(count) mistakes")
                                 .font(.subheadline)
                                 .foregroundColor(.white)
                         }
@@ -74,6 +75,6 @@ struct WorkoutMistakeRow: View {
 
 struct WorkoutMistakeRow_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutMistakeRow(mistake: Workouts().workouts[1].mistakes[0])
+        WorkoutMistakeRow(mistake: Workouts().workouts[1].mistakes[0], count: 0)
     }
 }

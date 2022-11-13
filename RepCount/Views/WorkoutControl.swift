@@ -13,6 +13,7 @@ class ViewModel: ObservableObject {
     @Published var label: String = ""
     @Published var count: Double = 0.0
     @Published var countMistake: Double = 0.0
+    @Published var countActionRepetitions = [String: Int]()
 }
 
 struct WorkoutControl: View {
@@ -43,8 +44,7 @@ struct WorkoutControl: View {
                                 .frame(height: 180)
                             VStack {
                                 HStack {
-                                    Text(viewModel.label)
-                                    //Text(workout.name)
+                                    Text(workout.name)
                                         .font(.title)
                                         .fontWeight(.bold)
                                         .foregroundColor(.white)
@@ -69,7 +69,6 @@ struct WorkoutControl: View {
                                         .font(.system(size: 22))
                                         .foregroundColor(Color("Green"))
                                     Text(String(format: "%.0f", viewModel.count))
-                                    //Text("00")
                                         .font(.title3)
                                         .foregroundColor(Color("Green"))
                                     Spacer()
@@ -79,7 +78,6 @@ struct WorkoutControl: View {
                                         .font(.system(size: 22))
                                         .foregroundColor(Color("Red"))
                                     Text(String(format: "%.0f", viewModel.countMistake))
-                                    //Text("00")
                                         .font(.title3)
                                         .foregroundColor(Color("Red"))
                                     Spacer()
@@ -107,6 +105,7 @@ struct WorkoutControl: View {
                                                 synthesizer.speak(utterance)
                                                 timer.upstream.connect().cancel()
                                                 isTimerRunning = false
+                                                print(viewModel.countActionRepetitions)
                                             }
                                     } else {
                                         Image(systemName: "play.circle.fill")
@@ -123,7 +122,7 @@ struct WorkoutControl: View {
                                 }.padding(.bottom, 5)
                                 HStack {
                                     Spacer()
-                                    NavigationLink(destination: WorkoutSummary(workout: workout, timeing: timerCount, repetitions: Int(viewModel.count), mistakes: Int(viewModel.countMistake))) {
+                                    NavigationLink(destination: WorkoutSummary(workout: workout, timeing: timerCount, repetitions: Int(viewModel.count), mistakes: Int(viewModel.countMistake), action: viewModel.countActionRepetitions)) {
                                         Image(systemName: "x.circle.fill")
                                             .font(.system(size: 38))
                                             .foregroundColor(.white)
@@ -171,8 +170,8 @@ class ViewController: UIViewController {
     
     var videoCapture: VideoCapture!
     var videoProcessingChain: VideoProcessingChain!
-    var actionFrameCounts = [String: Int]()
-    var actionRepCounts = [String: Int]()
+    
+    let synthesizer = AVSpeechSynthesizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -226,14 +225,31 @@ extension ViewController: VideoProcessingChainDelegate {
 extension ViewController {
     
     private func addRepCount(_ repCount: Int, to actionLabel: String) {
-        let totalReps = (actionRepCounts[actionLabel] ?? 0) + repCount
-        actionRepCounts[actionLabel] = totalReps
+        let totalReps = (viewModel?.countActionRepetitions[actionLabel] ?? 0) + repCount
+        viewModel?.countActionRepetitions[actionLabel] = totalReps
+        
+        
+        // Numero di frame di esecuzione dell'esercizio diviso il numero di frame al secondo ottengo il tempo in secondi di esecuzione dell'esercizio che se divido per il tempo medio di esecuzione ottengo il numero di ripetizioni
         
         if actionLabel == "Jumping Jacks" {
-            self.viewModel?.count = (Double(totalReps) / 40)
+            self.viewModel?.count = (Double(totalReps) / 35)
+            //let countString = String(format: "%.0f", (Double(totalReps) / 40))
+            let countString = String(format: "%.0f", (Double(totalReps) / 35))
+            //let countInt = Int(Double(totalReps) / 40)
+            if countString == "1" || countString == "2" || countString == "3" {
+                //let countString = String(countInt)
+                let utterance = AVSpeechUtterance(string: countString)
+                utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                synthesizer.speak(utterance)
+            }
             //self.viewModel?.count = (Double(totalReps) / ExerciseClassifier.frameRate)
         } else if actionLabel == "Lunges" {
-            self.viewModel?.countMistake = (Double(totalReps) / 55)
+            self.viewModel?.countMistake = (Double(totalReps) / 60)
+            //let countMistakeString = String(format: "%.0f", (Double(totalReps) / 55))
+            let countMistakeString = String(Int(Double(totalReps) / 60))
+            let utterance = AVSpeechUtterance(string: countMistakeString)
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            synthesizer.speak(utterance)
             //self.viewModel?.countMistake = (Double(totalReps) / ExerciseClassifier.frameRate)
         }
         

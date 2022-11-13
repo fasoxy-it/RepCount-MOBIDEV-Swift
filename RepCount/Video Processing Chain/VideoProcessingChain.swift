@@ -73,7 +73,7 @@ struct VideoProcessingChain {
     ///
     /// Increase the stride's value to make predictions less frequently.
     /// - Tag: windowStride
-    private let windowStride = 10
+    private let windowStride = 1
 
     /// A performance reporter that logs the number of predictions and frames
     /// that pass through the chain.

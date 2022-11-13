@@ -13,6 +13,7 @@ struct WorkoutSummary: View {
     var timeing: Double
     var repetitions: Int
     var mistakes: Int
+    var action: [String: Int]
     
     var body: some View {
         NavigationView {
@@ -145,9 +146,9 @@ struct WorkoutSummary: View {
                                 .foregroundColor(.white)
                             Spacer()
                         }.padding(.top, 10)
-                        ForEach (workout.mistakes, id: \.self) {
+                        ForEach (Array(action.keys), id: \.self) {
                             mistake in
-                            WorkoutMistakeRow(mistake: mistake)
+                            WorkoutMistakeRow(mistake: mistake, count: action[mistake]!)
                         }
                         HStack {
                             NavigationLink(destination: ContentView()) {
@@ -175,9 +176,9 @@ struct WorkoutSummary: View {
 struct WorkoutSummary_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            WorkoutSummary(workout: Workouts().workouts[0], timeing: 14000, repetitions: 15, mistakes: 2)
-            WorkoutSummary(workout: Workouts().workouts[1], timeing: 14000, repetitions: 15, mistakes: 2)
-            WorkoutSummary(workout: Workouts().workouts[2], timeing: 14000, repetitions: 15, mistakes: 2)
+            WorkoutSummary(workout: Workouts().workouts[0], timeing: 14000, repetitions: 15, mistakes: 2, action: ["Jumping Jacks": 3, "Lunges": 1])
+            WorkoutSummary(workout: Workouts().workouts[1], timeing: 14000, repetitions: 15, mistakes: 2, action: ["Jumping Jacks": 3])
+            WorkoutSummary(workout: Workouts().workouts[2], timeing: 14000, repetitions: 15, mistakes: 2, action: ["Jumping Jacks": 3])
         }
     }
 }
