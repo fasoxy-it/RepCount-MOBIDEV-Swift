@@ -10,18 +10,17 @@ import RealityKit
 import AVFoundation
 
 class ViewModel: ObservableObject {
-    //@Published var label: String = ""
     @Published var count: Double = 0.0
     @Published var countMistake: Double = 0.0
     @Published var countActionRepetitions = [String: Int]()
+    
+    @Published var camera = false
+    @Published var prediction = true
 }
 
 struct WorkoutControl: View {
     
-    @ObservedObject var viewModel = ViewModel()
-    
-    @State var camera = false
-    @State var prediction = true
+    @StateObject var viewModel = ViewModel()
     
     @State var isTimerRunning: Bool = true
     @State var timerCount: Double = 0.0
@@ -35,7 +34,7 @@ struct WorkoutControl: View {
         
         NavigationView {
             ZStack {
-                ViewWrapper(viewModel: viewModel, changeCamera: $camera, changePrediction: $prediction)
+                ViewWrapper(viewModel: viewModel)
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     Spacer()
@@ -96,7 +95,7 @@ struct WorkoutControl: View {
                                             let utterance = AVSpeechUtterance(string: "Change")
                                             utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                                             synthesizer.speak(utterance)
-                                            camera = true
+                                            viewModel.camera = true
                                         }
                                 }.padding(.bottom, 5)
                                 HStack {
@@ -111,7 +110,7 @@ struct WorkoutControl: View {
                                                 synthesizer.speak(utterance)
                                                 timer.upstream.connect().cancel()
                                                 isTimerRunning = false
-                                                prediction = false
+                                                viewModel.prediction = false
                                             }
                                     } else {
                                         Image(systemName: "play.circle.fill")
@@ -123,7 +122,7 @@ struct WorkoutControl: View {
                                                 synthesizer.speak(utterance)
                                                 timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
                                                 isTimerRunning = true
-                                                prediction = true
+                                                viewModel.prediction = true
                                             }
                                     }
                                 }.padding(.bottom, 5)
@@ -138,7 +137,7 @@ struct WorkoutControl: View {
                                         let utterance = AVSpeechUtterance(string: "Finish")
                                         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                                         synthesizer.speak(utterance)
-                                        prediction = false
+                                        viewModel.prediction = false
                                     })
                                 }
                             }.padding(.trailing, 20)
@@ -300,10 +299,7 @@ extension ViewController {
 
 struct ViewWrapper: UIViewControllerRepresentable {
     
-    var viewModel: ViewModel
-    
-    @Binding var changeCamera: Bool
-    @Binding var changePrediction: Bool
+    @ObservedObject var viewModel: ViewModel
     
     func makeUIViewController(context: Context) -> ViewController {
         let mvc = ViewController()
@@ -313,12 +309,12 @@ struct ViewWrapper: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: ViewController, context: Context) {
         
-        if changeCamera {
+        if viewModel.camera {
             uiViewController.videoCapture.toggleCameraSelection()
-            changeCamera = false
+            viewModel.camera = false
         }
         
-        if changePrediction {
+        if viewModel.prediction {
             uiViewController.videoCapture.enableCaptureSession()
         } else {
             uiViewController.videoCapture.disableCaptureSession()
