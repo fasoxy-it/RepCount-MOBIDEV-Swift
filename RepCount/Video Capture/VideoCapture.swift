@@ -118,11 +118,11 @@ class VideoCapture: NSObject {
         }
     }
 
-    private func enableCaptureSession() {
+    func enableCaptureSession() {
         if !captureSession.isRunning { captureSession.startRunning() }
     }
 
-    private func disableCaptureSession() {
+    func disableCaptureSession() {
         if captureSession.isRunning { captureSession.stopRunning() }
     }
 }
