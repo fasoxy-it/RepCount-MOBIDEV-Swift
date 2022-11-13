@@ -14,6 +14,7 @@ class ViewModel: ObservableObject {
     @Published var count: Double = 0.0
     @Published var countMistake: Double = 0.0
     @Published var countActionRepetitions = [String: Int]()
+    @Published var camera: Bool = true
 }
 
 struct WorkoutControl: View {
@@ -28,11 +29,13 @@ struct WorkoutControl: View {
     
     var workout: Workout
     
+    @State var willCallFunc = false
+    
     var body: some View {
         
         NavigationView {
             ZStack {
-                ViewWrapper(viewModel: viewModel)
+                ViewWrapper(viewModel: viewModel, isCallingFunction: $willCallFunc)
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     Spacer()
@@ -90,7 +93,7 @@ struct WorkoutControl: View {
                                         .font(.system(size: 38))
                                         .foregroundColor(.white)
                                         .onTapGesture {
-                                            //
+                                            self.willCallFunc = true
                                         }
                                 }.padding(.bottom, 5)
                                 HStack {
@@ -200,7 +203,7 @@ class ViewController: UIViewController {
 extension ViewController: VideoCaptureDelegate {
     
     func videoCapture(_ videoCapture: VideoCapture, didCreate framePublisher: FramePublisher) {
-        updateUILabelsWithPrediction(.startingPrediction)
+        //updateUILabelsWithPrediction(.startingPrediction)
         videoProcessingChain.upstreamFramePublisher = framePublisher
     }
     
@@ -214,7 +217,7 @@ extension ViewController: VideoProcessingChainDelegate {
             addRepCount(frameCount, to: actionPrediction.label)
             //addRepCount(1, to: actionPrediction.label)
         }
-        updateUILabelsWithPrediction(actionPrediction)
+        //updateUILabelsWithPrediction(actionPrediction)
     }
     
     func videoProcessingChain(_ chain: VideoProcessingChain, didDetect poses: [Pose]?, in frame: CGImage) {
@@ -235,6 +238,7 @@ extension ViewController {
         // Numero di frame di esecuzione dell'esercizio diviso il numero di frame al secondo ottengo il tempo in secondi di esecuzione dell'esercizio che se divido per il tempo medio di esecuzione ottengo il numero di ripetizioni
         
         if actionLabel == "Jumping Jacks" {
+            // Squat
             self.viewModel?.count = (Double(totalReps) / 35)
             //let countString = String(format: "%.0f", (Double(totalReps) / 40))
             let countString = String(format: "%.0f", (Double(totalReps) / 35))
@@ -247,6 +251,8 @@ extension ViewController {
             }
             //self.viewModel?.count = (Double(totalReps) / ExerciseClassifier.frameRate)
         } else if actionLabel == "Lunges" {
+            videoCapture.toggleCameraSelection()
+            // Squat Mistakes
             self.viewModel?.countMistake = (Double(totalReps) / 60)
             //let countMistakeString = String(format: "%.0f", (Double(totalReps) / 55))
             let countMistakeString = String(Int(Double(totalReps) / 60))
@@ -265,6 +271,7 @@ extension ViewController {
     }
     */
     
+    /*
     private func updateUILabelsWithPrediction(_ prediction: ActionPrediction) {
         DispatchQueue.main.async {
             if prediction.label == "Jumping Jacks" {
@@ -274,6 +281,7 @@ extension ViewController {
             }
         }
     }
+    */
     
     private func drawPoses(_ poses: [Pose]?, onto frame: CGImage) {
         
@@ -313,12 +321,19 @@ struct ViewWrapper: UIViewControllerRepresentable {
     
     var viewModel: ViewModel
     
+    @Binding var isCallingFunction: Bool
+    
     func makeUIViewController(context: Context) -> ViewController {
         let mvc = ViewController()
         mvc.viewModel = viewModel
         return mvc
     }
     
-    func updateUIViewController(_ uiViewController: ViewController, context: Context) {}
+    func updateUIViewController(_ uiViewController: ViewController, context: Context) {
+        if isCallingFunction {
+            uiViewController.videoCapture.toggleCameraSelection()
+            isCallingFunction = false
+        }
+    }
     
 }
