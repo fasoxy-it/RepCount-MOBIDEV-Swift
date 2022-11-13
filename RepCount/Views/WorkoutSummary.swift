@@ -184,5 +184,8 @@ struct WorkoutSummary_Previews: PreviewProvider {
 }
 
 func calculateAccuracy(repetitions: Int, mistakes: Int) -> Int {
+    guard mistakes != 0 else {
+        return 100
+    }
     return 100 - ((mistakes * 100) / repetitions)
 }

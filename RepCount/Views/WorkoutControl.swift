@@ -128,6 +128,9 @@ struct WorkoutControl: View {
                                             .foregroundColor(.white)
                                     }.simultaneousGesture(TapGesture().onEnded {
                                         timer.upstream.connect().cancel()
+                                        let utterance = AVSpeechUtterance(string: "Finish")
+                                        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                                        synthesizer.speak(utterance)
                                     })
                                 }
                             }.padding(.trailing, 20)
