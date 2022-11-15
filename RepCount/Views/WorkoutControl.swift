@@ -10,12 +10,16 @@ import RealityKit
 import AVFoundation
 
 class ViewModel: ObservableObject {
-    @Published var count: Double = 0.0
-    @Published var countMistake: Double = 0.0
+    
+    @Published var count: Int = 0
+    @Published var countMistake: Int = 0
     @Published var countActionRepetitions = [String: Int]()
+    @Published var countSpeech: [Int: Bool] = [1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false]
+    @Published var countMistakeSpeech: [Int: Bool] = [1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false]
     
     @Published var camera = false
     @Published var prediction = true
+    
 }
 
 struct WorkoutControl: View {
@@ -34,7 +38,7 @@ struct WorkoutControl: View {
         
         NavigationView {
             ZStack {
-                ViewWrapper(viewModel: viewModel)
+                ViewWrapper(viewModel: viewModel, workout: workout)
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     Spacer()
@@ -70,7 +74,7 @@ struct WorkoutControl: View {
                                     Image(systemName: "arrow.clockwise.circle.fill")
                                         .font(.system(size: 22))
                                         .foregroundColor(Color("Green"))
-                                    Text(String(format: "%.0f", viewModel.count))
+                                    Text(String(viewModel.count))
                                         .font(.title3)
                                         .foregroundColor(Color("Green"))
                                     Spacer()
@@ -79,7 +83,7 @@ struct WorkoutControl: View {
                                     Image(systemName: "exclamationmark.circle.fill")
                                         .font(.system(size: 22))
                                         .foregroundColor(Color("Red"))
-                                    Text(String(format: "%.0f", viewModel.countMistake))
+                                    Text(String(viewModel.countMistake))
                                         .font(.title3)
                                         .foregroundColor(Color("Red"))
                                     Spacer()
@@ -128,15 +132,12 @@ struct WorkoutControl: View {
                                 }.padding(.bottom, 5)
                                 HStack {
                                     Spacer()
-                                    NavigationLink(destination: WorkoutSummary(workout: workout, timeing: timerCount, repetitions: Int(viewModel.count), mistakes: Int(viewModel.countMistake), action: viewModel.countActionRepetitions)) {
+                                    NavigationLink(destination: WorkoutSummary(workout: workout, timeing: timerCount, repetitions: viewModel.count, mistakes: viewModel.countMistake, action: viewModel.countActionRepetitions)) {
                                         Image(systemName: "x.circle.fill")
                                             .font(.system(size: 38))
                                             .foregroundColor(.white)
                                     }.simultaneousGesture(TapGesture().onEnded {
                                         timer.upstream.connect().cancel()
-                                        let utterance = AVSpeechUtterance(string: "Finish")
-                                        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                                        synthesizer.speak(utterance)
                                         viewModel.prediction = false
                                     })
                                 }
@@ -145,7 +146,8 @@ struct WorkoutControl: View {
                     }
                 }
             }
-        }.toolbar(.hidden)
+        }
+        .toolbar(.hidden)
     }
 }
 
@@ -169,6 +171,7 @@ func formatTimerMmSsMSms(counter: Double) -> String {
 class ViewController: UIViewController {
     
     var viewModel: ViewModel?
+    var workout: Workout?
     
     private var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -237,28 +240,35 @@ extension ViewController {
         
         // Numero di frame di esecuzione dell'esercizio diviso il numero di frame al secondo ottengo il tempo in secondi di esecuzione dell'esercizio che se divido per il tempo medio di esecuzione ottengo il numero di ripetizioni
         
-        if actionLabel == "Jumping Jacks" {
+        if actionLabel == workout?.name {
             // Squat
-            self.viewModel?.count = (Double(totalReps) / 35)
-            //let countString = String(format: "%.0f", (Double(totalReps) / 40))
-            let countString = String(format: "%.0f", (Double(totalReps) / 35))
-            //let countInt = Int(Double(totalReps) / 40)
-            if countString == "1" || countString == "2" || countString == "3" {
-                //let countString = String(countInt)
-                let utterance = AVSpeechUtterance(string: countString)
-                utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                synthesizer.speak(utterance)
+            
+            let repetitions = (Double(totalReps) / 35)
+            
+            for value in 1...viewModel!.countSpeech.keys.count {
+                if repetitions > Double(value) && viewModel!.countSpeech[value] == false {
+                    viewModel?.count = value
+                    let utterance = AVSpeechUtterance(string: String(value))
+                    utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                    synthesizer.speak(utterance)
+                    viewModel?.countSpeech[value] = true
+                }
             }
-            //self.viewModel?.count = (Double(totalReps) / ExerciseClassifier.frameRate)
-        } else if actionLabel == "Lunges" {
+    
+        } else if actionLabel == workout?.mistakes[2] {
             // Squat Mistakes
-            self.viewModel?.countMistake = (Double(totalReps) / 60)
-            //let countMistakeString = String(format: "%.0f", (Double(totalReps) / 55))
-            let countMistakeString = String(Int(Double(totalReps) / 60))
-            let utterance = AVSpeechUtterance(string: countMistakeString)
-            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-            synthesizer.speak(utterance)
-            //self.viewModel?.countMistake = (Double(totalReps) / ExerciseClassifier.frameRate)
+            let repetitions = (Double(totalReps) / 55)
+            
+            for value in 1...viewModel!.countMistakeSpeech.keys.count {
+                if repetitions > Double(value) && viewModel!.countMistakeSpeech[value] == false {
+                    viewModel?.countMistake = value
+                    let utterance = AVSpeechUtterance(string: actionLabel)
+                    utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                    synthesizer.speak(utterance)
+                    viewModel?.countMistakeSpeech[value] = true
+                }
+            }
+            
         }
         
     }
@@ -301,9 +311,12 @@ struct ViewWrapper: UIViewControllerRepresentable {
     
     @ObservedObject var viewModel: ViewModel
     
+    var workout: Workout
+    
     func makeUIViewController(context: Context) -> ViewController {
         let mvc = ViewController()
         mvc.viewModel = viewModel
+        mvc.workout = workout
         return mvc
     }
     
