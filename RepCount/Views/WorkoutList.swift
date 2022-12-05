@@ -11,7 +11,7 @@ struct WorkoutList: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.black.edgesIgnoringSafeArea(.all)
+                //Color.black.edgesIgnoringSafeArea(.all)
                 ScrollView {
                     ForEach (Workouts().workouts) { workout in
                         NavigationLink {

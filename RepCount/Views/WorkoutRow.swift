@@ -31,13 +31,13 @@ struct WorkoutRow: View {
                         Text(workout.name)
                             .font(.title3)
                             .fontWeight(.bold)
-                            .foregroundColor(.white)
+                            //.foregroundColor(.white)
                         Spacer()
                     }
                     HStack {
                         Text(workout.muscle)
                             .font(.body)
-                            .foregroundColor(.white)
+                            //.foregroundColor(.white)
                         Spacer()
                     }
                 }

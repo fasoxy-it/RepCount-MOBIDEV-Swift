@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B3B2BBE29155559006D2BBF /* WorkoutMistakeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3B2BBD29155559006D2BBF /* WorkoutMistakeRow.swift */; };
+		0B3D73B32927F6D600A40DD2 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3D73B22927F6D600A40DD2 /* Utility.swift */; };
+		0B7E521E293DF96D00CF6855 /* SquatClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0B7E521D293DF96D00CF6855 /* SquatClassifier.mlmodel */; };
 		0BB09BE8290AD6E8001ECC1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09BE7290AD6E8001ECC1E /* AppDelegate.swift */; };
 		0BB09BEA290AD6E8001ECC1E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB09BE9290AD6E8001ECC1E /* ContentView.swift */; };
 		0BB09BEE290AD6E9001ECC1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB09BED290AD6E9001ECC1E /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		0B3B2BBD29155559006D2BBF /* WorkoutMistakeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutMistakeRow.swift; sourceTree = "<group>"; };
+		0B3D73B22927F6D600A40DD2 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		0B7E521D293DF96D00CF6855 /* SquatClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SquatClassifier.mlmodel; sourceTree = "<group>"; };
 		0BB09BE4290AD6E8001ECC1E /* RepCount.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepCount.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB09BE7290AD6E8001ECC1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0BB09BE9290AD6E8001ECC1E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				0BB9D38229195A6300DEB47F /* ActionPrediction.swift */,
+				0B7E521D293DF96D00CF6855 /* SquatClassifier.mlmodel */,
 				0BB9D38529195B3300DEB47F /* ExerciseClassifier.mlmodel */,
 				0BB9D38729195B9A00DEB47F /* ExerciseClassifier+Singleton.swift */,
 				0BB9D38929195BAF00DEB47F /* ExerciseClassifier+Label.swift */,
@@ -208,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				0BB9D39129195C5C00DEB47F /* PerformanceReporter.swift */,
+				0B3D73B22927F6D600A40DD2 /* Utility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 				0BB09C03290ADA06001ECC1E /* WorkoutRow.swift in Sources */,
 				0BB9D38C29195BD900DEB47F /* ExerciseClassifier+LabelCheck.swift in Sources */,
 				0BB9D373291958CF00DEB47F /* AvCaptureDeviceInput+Camera.swift in Sources */,
+				0B7E521E293DF96D00CF6855 /* SquatClassifier.mlmodel in Sources */,
 				0BB9D37A2919597200DEB47F /* Pose.swift in Sources */,
 				0BB9D381291959DE00DEB47F /* Pose+Empty.swift in Sources */,
 				0BB9D36E2919578600DEB47F /* VideoCapture.swift in Sources */,
@@ -305,6 +312,7 @@
 				0BB9D39229195C5C00DEB47F /* PerformanceReporter.swift in Sources */,
 				0BB9D375291958FA00DEB47F /* AVCaptureVideoDataOutput+PixelFormat.swift in Sources */,
 				0BB9D3712919589F00DEB47F /* AVCaptureDevice+FrameRate.swift in Sources */,
+				0B3D73B32927F6D600A40DD2 /* Utility.swift in Sources */,
 				0BB9D38829195B9A00DEB47F /* ExerciseClassifier+Singleton.swift in Sources */,
 				0BB09C05290ADB46001ECC1E /* WorkoutList.swift in Sources */,
 				0BB09BFB290AD852001ECC1E /* Model.swift in Sources */,

@@ -10,7 +10,7 @@ import SwiftUI
 struct WorkoutMistakeRow: View {
     
     var mistake: String
-    var count: Int
+    var count: Double
 
     @State private var showDetails = false
     
@@ -25,7 +25,7 @@ struct WorkoutMistakeRow: View {
                             Image(systemName: "chevron.down")
                                 .font(.body)
                                 .fontWeight(.bold)
-                                .foregroundColor(.white)
+                                //.foregroundColor(.white)
                                 .onTapGesture {
                                     showDetails.toggle()
                                 }
@@ -33,7 +33,7 @@ struct WorkoutMistakeRow: View {
                             Image(systemName: "chevron.up")
                                 .font(.body)
                                 .fontWeight(.bold)
-                                .foregroundColor(.white)
+                                //.foregroundColor(.white)
                                 .onTapGesture {
                                     showDetails.toggle()
                                 }
@@ -44,7 +44,7 @@ struct WorkoutMistakeRow: View {
                         Text(mistake)
                             .font(.body)
                             .fontWeight(.bold)
-                            .foregroundColor(.white)
+                            //.foregroundColor(.white)
                     }
                     Spacer()
                     VStack {
@@ -52,9 +52,9 @@ struct WorkoutMistakeRow: View {
                             RoundedRectangle(cornerRadius: 15)
                                 .foregroundColor(Color("Red"))
                                 .frame(width: 110, height: 28)
-                            Text("\(count) mistakes")
+                            Text("\(Int(count)) mistakes")
                                 .font(.subheadline)
-                                .foregroundColor(.white)
+                                //.foregroundColor(.white)
                         }
                     }.padding(.leading)
                 }
@@ -62,7 +62,7 @@ struct WorkoutMistakeRow: View {
                     HStack {
                         Text(mistake)
                             .font(.body)
-                            .foregroundColor(.white)
+                            //.foregroundColor(.white)
                             .fixedSize(horizontal: false, vertical: true)
                         Spacer()
                     }

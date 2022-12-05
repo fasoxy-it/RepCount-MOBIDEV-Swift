@@ -18,7 +18,7 @@ struct WorkoutSummary: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.black.edgesIgnoringSafeArea(.all)
+                //Color.black.edgesIgnoringSafeArea(.all)
                 ScrollView {
                     VStack {
                         HStack {
@@ -37,7 +37,7 @@ struct WorkoutSummary: View {
                                     Text(workout.name)
                                         .font(.title2)
                                         .fontWeight(.bold)
-                                        .foregroundColor(.white)
+                                        //.foregroundColor(.white)
                                     Spacer()
                                 }.padding(.bottom, 1)
                                 HStack {
@@ -47,7 +47,7 @@ struct WorkoutSummary: View {
                                     Text(workout.muscle)
                                         .font(.body)
                                         .fontWeight(.bold)
-                                        .foregroundColor(.white)
+                                        //.foregroundColor(.white)
                                         .padding(.leading, 5)
                                     Spacer()
                                 }.padding(.bottom, 1)
@@ -58,7 +58,7 @@ struct WorkoutSummary: View {
                                     Text(workout.intensity)
                                         .font(.body)
                                         .fontWeight(.bold)
-                                        .foregroundColor(.white)
+                                        //.foregroundColor(.white)
                                         .padding(.leading, 4)
                                     Spacer()
                                 }
@@ -68,7 +68,7 @@ struct WorkoutSummary: View {
                             Text("Workout details")
                                 .font(.title)
                                 .fontWeight(.bold)
-                                .foregroundColor(.white)
+                                //.foregroundColor(.white)
                             Spacer()
                         }.padding(.top, 10)
                         ZStack {
@@ -81,7 +81,7 @@ struct WorkoutSummary: View {
                                             Text("Timeing")
                                                 .font(.body)
                                                 .fontWeight(.bold)
-                                                .foregroundColor(.white)
+                                                //.foregroundColor(.white)
                                             Spacer()
                                         }
                                         HStack {
@@ -95,7 +95,7 @@ struct WorkoutSummary: View {
                                             Text("Repetitions")
                                                 .font(.body)
                                                 .fontWeight(.bold)
-                                                .foregroundColor(.white)
+                                                //.foregroundColor(.white)
                                             Spacer()
                                         }.padding(.top, 5)
                                         HStack {
@@ -111,7 +111,7 @@ struct WorkoutSummary: View {
                                             Text("Accuracy")
                                                 .font(.body)
                                                 .fontWeight(.bold)
-                                                .foregroundColor(.white)
+                                                //.foregroundColor(.white)
                                             Spacer()
                                         }
                                         HStack {
@@ -125,7 +125,7 @@ struct WorkoutSummary: View {
                                             Text("Mistakes")
                                                 .font(.body)
                                                 .fontWeight(.bold)
-                                                .foregroundColor(.white)
+                                                //.foregroundColor(.white)
                                             Spacer()
                                         }.padding(.top, 5)
                                         HStack {
@@ -143,15 +143,15 @@ struct WorkoutSummary: View {
                             Text("Mistake analysis")
                                 .font(.title)
                                 .fontWeight(.bold)
-                                .foregroundColor(.white)
+                                //.foregroundColor(.white)
                             Spacer()
                         }.padding(.top, 10)
                         ForEach (Array(action.keys), id: \.self) {
                             mistake in
-                            if (mistake != "Jumping Jacks" || mistake != "Other Action") {
+                            //if (mistake != workout.name) {
                                 // Adesso vengono considerati come mistakes i frames
-                                WorkoutMistakeRow(mistake: mistake, count: action[mistake]!)
-                            }
+                                WorkoutMistakeRow(mistake: mistake, count: Double(action[mistake]!) / 55)
+                            //}
                         }
                         HStack {
                             NavigationLink(destination: ContentView()) {

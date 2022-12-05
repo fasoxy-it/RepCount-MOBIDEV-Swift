@@ -14,8 +14,9 @@ class ViewModel: ObservableObject {
     @Published var count: Int = 0
     @Published var countMistake: Int = 0
     @Published var countActionRepetitions = [String: Int]()
-    @Published var countSpeech: [Int: Bool] = [1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false]
-    @Published var countMistakeSpeech: [Int: Bool] = [1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false]
+    @Published var countRepetition: [Int: Bool] = [1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false, 11: false, 12: false, 13: false, 14: false, 15: false, 16: false, 17: false, 18: false, 19: false, 20: false, 21: false, 22: false, 23: false, 24: false, 25: false]
+    @Published var countSpeech: [Int: Bool] = [1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false, 11: false, 12: false, 13: false, 14: false, 15: false, 16: false, 17: false, 18: false, 19: false, 20: false, 21: false, 22: false, 23: false, 24: false, 25: false]
+    @Published var countMistakeSpeech: [Int: Bool] = [1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false, 11: false, 12: false, 13: false, 14: false, 15: false, 16: false, 17: false, 18: false, 19: false, 20: false, 21: false, 22: false, 23: false, 24: false, 25: false]
     
     @Published var camera = false
     @Published var prediction = true
@@ -30,9 +31,10 @@ struct WorkoutControl: View {
     @State var timerCount: Double = 0.0
     @State var timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     
-    let synthesizer = AVSpeechSynthesizer()
+    //let synthesizer = AVSpeechSynthesizer()
     
     var workout: Workout
+    var utility: Utility = Utility()
     
     var body: some View {
         
@@ -53,7 +55,7 @@ struct WorkoutControl: View {
                                     Text(workout.name)
                                         .font(.title)
                                         .fontWeight(.bold)
-                                        .foregroundColor(.white)
+                                        //.foregroundColor(.white)
                                     Spacer()
                                 }.padding(.bottom, 10)
                                 HStack {
@@ -96,9 +98,7 @@ struct WorkoutControl: View {
                                         .font(.system(size: 38))
                                         .foregroundColor(.white)
                                         .onTapGesture {
-                                            let utterance = AVSpeechUtterance(string: "Change")
-                                            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                                            synthesizer.speak(utterance)
+                                            utility.speak(string: "Change")
                                             viewModel.camera = true
                                         }
                                 }.padding(.bottom, 5)
@@ -109,9 +109,7 @@ struct WorkoutControl: View {
                                             .font(.system(size: 38))
                                             .foregroundColor(.white)
                                             .onTapGesture {
-                                                let utterance = AVSpeechUtterance(string: "Stop")
-                                                utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                                                synthesizer.speak(utterance)
+                                                utility.speak(string: "Pause")
                                                 timer.upstream.connect().cancel()
                                                 isTimerRunning = false
                                                 viewModel.prediction = false
@@ -121,9 +119,7 @@ struct WorkoutControl: View {
                                             .font(.system(size: 38))
                                             .foregroundColor(.white)
                                             .onTapGesture {
-                                                let utterance = AVSpeechUtterance(string: "Play")
-                                                utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                                                synthesizer.speak(utterance)
+                                                utility.speak(string: "Play")
                                                 timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
                                                 isTimerRunning = true
                                                 viewModel.prediction = true
@@ -138,6 +134,7 @@ struct WorkoutControl: View {
                                             .foregroundColor(.white)
                                     }.simultaneousGesture(TapGesture().onEnded {
                                         timer.upstream.connect().cancel()
+                                        utility.speak(string: "Finish")
                                         viewModel.prediction = false
                                     })
                                 }
@@ -159,13 +156,6 @@ struct WorkoutControl_Previews: PreviewProvider {
             WorkoutControl(workout: Workouts().workouts[2])
         }
     }
-}
-
-func formatTimerMmSsMSms(counter: Double) -> String {
-    let minutes = Int(counter) / 60 % 60
-    let seconds = Int(counter) % 60
-    let milliseconds = Int(counter*1000) % 1000
-    return String(format: "%02d:%02d:%02d", minutes, seconds, milliseconds)
 }
 
 class ViewController: UIViewController {
@@ -266,6 +256,9 @@ extension ViewController {
                     utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                     synthesizer.speak(utterance)
                     viewModel?.countMistakeSpeech[value] = true
+                    viewModel?.count += 1
+                    viewModel?.countSpeech[viewModel!.count] = true
+                    viewModel?.countActionRepetitions[workout!.name]! += 35
                 }
             }
             

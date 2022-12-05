@@ -16,8 +16,7 @@ struct WorkoutDetail: View {
     
     var body: some View {
         ZStack {
-            Color.black
-                .ignoresSafeArea()
+            //Color.black.ignoresSafeArea()
             ScrollView {
                 VStack {
                     HStack {
@@ -36,7 +35,7 @@ struct WorkoutDetail: View {
                                 Text(workout.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
-                                    .foregroundColor(.white)
+                                    //.foregroundColor(.white)
                                 Spacer()
                             }.padding(.bottom, 1)
                             HStack {
@@ -46,7 +45,7 @@ struct WorkoutDetail: View {
                                 Text(workout.muscle)
                                     .font(.body)
                                     .fontWeight(.bold)
-                                    .foregroundColor(.white)
+                                    //.foregroundColor(.white)
                                     .padding(.leading, 5)
                                 Spacer()
                             }.padding(.bottom, 1)
@@ -57,7 +56,7 @@ struct WorkoutDetail: View {
                                 Text(workout.intensity)
                                     .font(.body)
                                     .fontWeight(.bold)
-                                    .foregroundColor(.white)
+                                    //.foregroundColor(.white)
                                     .padding(.leading, 4)
                                 Spacer()
                             }
@@ -67,7 +66,7 @@ struct WorkoutDetail: View {
                         Text("Description")
                             .font(.title2)
                             .fontWeight(.bold)
-                            .foregroundColor(.white)
+                            //.foregroundColor(.white)
                         Spacer()
                     }
                     .padding(.top)
@@ -78,7 +77,7 @@ struct WorkoutDetail: View {
                             HStack {
                                 Text(workout.description)
                                     .font(.body)
-                                    .foregroundColor(.white)
+                                    //.foregroundColor(.white)
                             }
                             .padding(.top, 1)
                             VStack {
@@ -98,7 +97,7 @@ struct WorkoutDetail: View {
                         Text("Attentions")
                             .font(.title2)
                             .fontWeight(.bold)
-                            .foregroundColor(.white)
+                            //.foregroundColor(.white)
                         Spacer()
                     }.padding(.top)
                     ZStack {
@@ -111,12 +110,13 @@ struct WorkoutDetail: View {
                                         attention in
                                         HStack {
                                             Label {
-                                                Text(attention).foregroundColor(.white)
+                                                Text(attention)
+                                                    //.foregroundColor(.white)
                                                 Spacer()
                                             } icon: {
                                                 Image(systemName: "circle.fill")
                                                     .font(.system(size: 10))
-                                                    .foregroundColor(.white)
+                                                    //.foregroundColor(.white)
                                             }
                                         }
                                     }
@@ -136,7 +136,9 @@ struct WorkoutDetail: View {
                                     .fontWeight(.bold)
                                     .foregroundColor(.black)
                             }
-                        }
+                        }.simultaneousGesture(TapGesture().onEnded {
+                            
+                        })
                     }.padding(.top)
                 }.padding()
                     //.navigationTitle("")
