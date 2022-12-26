@@ -10,7 +10,7 @@ import SwiftUI
 struct WorkoutMistakeRow: View {
     
     var mistake: String
-    var count: Double
+    var count: Int
 
     @State private var showDetails = false
     
@@ -60,7 +60,7 @@ struct WorkoutMistakeRow: View {
                 }
                 if showDetails {
                     HStack {
-                        Text(mistake)
+                        Text(Workouts().workouts[1].mistakes["squat"]!)
                             .font(.body)
                             //.foregroundColor(.white)
                             .fixedSize(horizontal: false, vertical: true)
@@ -75,6 +75,6 @@ struct WorkoutMistakeRow: View {
 
 struct WorkoutMistakeRow_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutMistakeRow(mistake: Workouts().workouts[1].mistakes[0], count: 0)
+        WorkoutMistakeRow(mistake: Workouts().workouts[1].mistakes["squat"]!, count: 0)
     }
 }

@@ -224,16 +224,26 @@ extension ViewController: VideoProcessingChainDelegate {
 extension ViewController {
     
     private func addRepCount(_ repCount: Int, to actionLabel: String) {
-        let totalReps = (viewModel?.countActionRepetitions[actionLabel] ?? 0) + repCount
+        let totalReps = (viewModel?.countActionRepetitions[actionLabel] ?? 0) + (repCount / 60)
         viewModel?.countActionRepetitions[actionLabel] = totalReps
         
         
         // Numero di frame di esecuzione dell'esercizio diviso il numero di frame al secondo ottengo il tempo in secondi di esecuzione dell'esercizio che se divido per il tempo medio di esecuzione ottengo il numero di ripetizioni
         
-        if actionLabel == workout?.name {
+        if actionLabel != "None" {
+            //let repetitions = (Double(totalReps))
+            viewModel?.count += 1
+            
+            if actionLabel != "Squat" {
+                viewModel?.countMistake += 1
+            }
+        }
+        /*
+        
+        if actionLabel == /*workout?.name*/"Squat" {
             // Squat
             
-            let repetitions = (Double(totalReps) / 35)
+            let repetitions = (Double(totalReps) / 60)
             
             for value in 1...viewModel!.countSpeech.keys.count {
                 if repetitions > Double(value) && viewModel!.countSpeech[value] == false {
@@ -245,9 +255,9 @@ extension ViewController {
                 }
             }
     
-        } else if actionLabel == workout?.mistakes[2] {
+        } else {
             // Squat Mistakes
-            let repetitions = (Double(totalReps) / 55)
+            let repetitions = (Double(totalReps) / 75)
             
             for value in 1...viewModel!.countMistakeSpeech.keys.count {
                 if repetitions > Double(value) && viewModel!.countMistakeSpeech[value] == false {
@@ -258,11 +268,11 @@ extension ViewController {
                     viewModel?.countMistakeSpeech[value] = true
                     viewModel?.count += 1
                     viewModel?.countSpeech[viewModel!.count] = true
-                    viewModel?.countActionRepetitions[workout!.name]! += 35
+                    viewModel?.countActionRepetitions[workout!.name]! += 75
                 }
             }
             
-        }
+        } */
         
     }
     

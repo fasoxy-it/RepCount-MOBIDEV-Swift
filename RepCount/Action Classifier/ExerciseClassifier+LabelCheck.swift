@@ -5,7 +5,7 @@
 //  Created by Mattia Fasoli on 07/11/22.
 //
 
-extension ExerciseClassifier {
+extension SquatClassifier {
     /// Ensures the apps knows all of the model's labels at runtime.
     func checkLabels() {
         let metadata = model.modelDescription.metadata

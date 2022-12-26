@@ -7,7 +7,7 @@
 
 import CoreML
 
-extension ExerciseClassifier {
+extension SquatClassifier {
     /// Predicts an action from a series of landmarks' positions over time.
     /// - Parameter window: An `MLMultiarray` that contains the locations of a
     /// person's body landmarks for multiple points in time.
@@ -22,7 +22,7 @@ extension ExerciseClassifier {
             return ActionPrediction(label: action.rawValue, confidence: confidence)
 
         } catch {
-            fatalError("Exercise Classifier prediction error: \(error)")
+            fatalError("Squat Classifier prediction error: \(error)")
         }
     }
 }

@@ -5,15 +5,15 @@
 //  Created by Mattia Fasoli on 07/11/22.
 //
 
-extension ExerciseClassifier {
+extension SquatClassifier {
     /// Represents the app's knowledge of the Exercise Classifier model's labels.
     enum Label: String, CaseIterable {
-        case lunges = "Lunges"
-        case burpees = "Burpees"
-        case jumpingJacks = "Jumping Jacks"
+        case squat = "Squat"
+        case knees = "Knees"
+        case halfsquat = "Halfsquat"
 
         /// A negative class that represents irrelevant actions.
-        case otherAction = "Other Action"
+        case none = "None"
 
         /// Creates a label from a string.
         /// - Parameter label: The name of an action class.

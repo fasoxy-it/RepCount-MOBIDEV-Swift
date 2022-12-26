@@ -7,21 +7,21 @@
 
 import CoreML
 
-extension ExerciseClassifier {
+extension SquatClassifier {
     /// Creates a shared Exercise Classifier instance for the app at launch.
-    static let shared: ExerciseClassifier = {
+    static let shared: SquatClassifier = {
         // Use a default model configuration.
         let defaultConfig = MLModelConfiguration()
 
         // Create an Exercise Classifier instance.
-        guard let exerciseClassifier = try? ExerciseClassifier(configuration: defaultConfig) else {
+        guard let squatClassifier = try? SquatClassifier(configuration: defaultConfig) else {
             // The app requires the action classifier to function.
-            fatalError("Exercise Classifier failed to initialize.")
+            fatalError("Squat Classifier failed to initialize.")
         }
 
         // Ensure the Exercise Classifier.Label cases match the model's classes.
-        exerciseClassifier.checkLabels()
+        squatClassifier.checkLabels()
 
-        return exerciseClassifier
+        return squatClassifier
     }()
 }

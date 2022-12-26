@@ -148,10 +148,11 @@ struct WorkoutSummary: View {
                         }.padding(.top, 10)
                         ForEach (Array(action.keys), id: \.self) {
                             mistake in
-                            //if (mistake != workout.name) {
+                            if (mistake != "None" && mistake != "Squat") {
                                 // Adesso vengono considerati come mistakes i frames
-                                WorkoutMistakeRow(mistake: mistake, count: Double(action[mistake]!) / 55)
-                            //}
+                                //WorkoutMistakeRow(mistake: mistake, count: Double(action[mistake]!) / 60)
+                                WorkoutMistakeRow(mistake: mistake, count: action[mistake]!)
+                            }
                         }
                         HStack {
                             NavigationLink(destination: ContentView()) {

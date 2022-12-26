@@ -61,7 +61,7 @@ struct VideoProcessingChain {
     private let humanBodyPoseRequest = VNDetectHumanBodyPoseRequest()
 
     /// The action classifier that recognizes exercise activities.
-    private let actionClassifier = ExerciseClassifier.shared
+    private let actionClassifier = SquatClassifier.shared
 
     /// The number of pose data instances the action classifier needs
     /// to make a prediction.
@@ -73,7 +73,7 @@ struct VideoProcessingChain {
     ///
     /// Increase the stride's value to make predictions less frequently.
     /// - Tag: windowStride
-    private let windowStride = 5
+    private let windowStride = 60
 
     /// A performance reporter that logs the number of predictions and frames
     /// that pass through the chain.
