@@ -14,9 +14,6 @@ class ViewModel: ObservableObject {
     @Published var count: Int = 0
     @Published var countMistake: Int = 0
     @Published var countActionRepetitions = [String: Int]()
-    @Published var countRepetition: [Int: Bool] = [1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false, 11: false, 12: false, 13: false, 14: false, 15: false, 16: false, 17: false, 18: false, 19: false, 20: false, 21: false, 22: false, 23: false, 24: false, 25: false]
-    @Published var countSpeech: [Int: Bool] = [1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false, 11: false, 12: false, 13: false, 14: false, 15: false, 16: false, 17: false, 18: false, 19: false, 20: false, 21: false, 22: false, 23: false, 24: false, 25: false]
-    @Published var countMistakeSpeech: [Int: Bool] = [1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false, 11: false, 12: false, 13: false, 14: false, 15: false, 16: false, 17: false, 18: false, 19: false, 20: false, 21: false, 22: false, 23: false, 24: false, 25: false]
     
     @Published var camera = false
     @Published var prediction = true
@@ -231,48 +228,20 @@ extension ViewController {
         // Numero di frame di esecuzione dell'esercizio diviso il numero di frame al secondo ottengo il tempo in secondi di esecuzione dell'esercizio che se divido per il tempo medio di esecuzione ottengo il numero di ripetizioni
         
         if actionLabel != "None" {
-            //let repetitions = (Double(totalReps))
+            
             viewModel?.count += 1
             
-            if actionLabel != "Squat" {
+            if actionLabel == "Squat" {
+                let utterance = AVSpeechUtterance(string: String(viewModel!.count))
+                utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                synthesizer.speak(utterance)
+            } else {
                 viewModel?.countMistake += 1
+                let utterance = AVSpeechUtterance(string: actionLabel)
+                utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+                synthesizer.speak(utterance)
             }
         }
-        /*
-        
-        if actionLabel == /*workout?.name*/"Squat" {
-            // Squat
-            
-            let repetitions = (Double(totalReps) / 60)
-            
-            for value in 1...viewModel!.countSpeech.keys.count {
-                if repetitions > Double(value) && viewModel!.countSpeech[value] == false {
-                    viewModel?.count = value
-                    let utterance = AVSpeechUtterance(string: String(value))
-                    utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                    synthesizer.speak(utterance)
-                    viewModel?.countSpeech[value] = true
-                }
-            }
-    
-        } else {
-            // Squat Mistakes
-            let repetitions = (Double(totalReps) / 75)
-            
-            for value in 1...viewModel!.countMistakeSpeech.keys.count {
-                if repetitions > Double(value) && viewModel!.countMistakeSpeech[value] == false {
-                    viewModel?.countMistake = value
-                    let utterance = AVSpeechUtterance(string: actionLabel)
-                    utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-                    synthesizer.speak(utterance)
-                    viewModel?.countMistakeSpeech[value] = true
-                    viewModel?.count += 1
-                    viewModel?.countSpeech[viewModel!.count] = true
-                    viewModel?.countActionRepetitions[workout!.name]! += 75
-                }
-            }
-            
-        } */
         
     }
     

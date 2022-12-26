@@ -13,6 +13,7 @@ struct WorkoutDetail: View {
     @State var player = AVPlayer()
     
     var workout: Workout
+    var utility: Utility = Utility()
     
     var body: some View {
         ZStack {
@@ -137,7 +138,7 @@ struct WorkoutDetail: View {
                                     .foregroundColor(.black)
                             }
                         }.simultaneousGesture(TapGesture().onEnded {
-                            
+                            utility.speak(string: "Start")
                         })
                     }.padding(.top)
                 }.padding()
