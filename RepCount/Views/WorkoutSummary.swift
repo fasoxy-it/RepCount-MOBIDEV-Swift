@@ -149,9 +149,7 @@ struct WorkoutSummary: View {
                         ForEach (Array(action.keys), id: \.self) {
                             mistake in
                             if (mistake != "None" && mistake != "Squat") {
-                                // Adesso vengono considerati come mistakes i frames
-                                //WorkoutMistakeRow(mistake: mistake, count: Double(action[mistake]!) / 60)
-                                WorkoutMistakeRow(mistake: mistake, count: action[mistake]!)
+                                WorkoutMistakeRow(workout: workout, mistake: mistake, description: workout.mistakes[mistake]!, count: action[mistake]!)
                             }
                         }
                         HStack {
