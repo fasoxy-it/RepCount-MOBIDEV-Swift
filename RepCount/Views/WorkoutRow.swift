@@ -28,7 +28,7 @@ struct WorkoutRow: View {
                 }
                 VStack {
                     HStack {
-                        Text(workout.name)
+                        Text(workout.name + "s")
                             .font(.title3)
                             .fontWeight(.bold)
                             //.foregroundColor(.white)

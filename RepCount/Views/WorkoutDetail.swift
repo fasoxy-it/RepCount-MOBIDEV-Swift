@@ -33,7 +33,7 @@ struct WorkoutDetail: View {
                         }
                         VStack {
                             HStack {
-                                Text(workout.name)
+                                Text(workout.name + "s")
                                     .font(.title2)
                                     .fontWeight(.bold)
                                     //.foregroundColor(.white)

@@ -49,7 +49,7 @@ struct WorkoutControl: View {
                                 .frame(height: 180)
                             VStack {
                                 HStack {
-                                    Text(workout.name)
+                                    Text(workout.name + "s")
                                         .font(.title)
                                         .fontWeight(.bold)
                                         //.foregroundColor(.white)
@@ -231,7 +231,7 @@ extension ViewController {
             
             viewModel?.count += 1
             
-            if actionLabel == "Squat" {
+            if actionLabel == workout?.name {
                 let utterance = AVSpeechUtterance(string: String(viewModel!.count))
                 utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
                 synthesizer.speak(utterance)

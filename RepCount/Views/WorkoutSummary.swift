@@ -34,7 +34,7 @@ struct WorkoutSummary: View {
                             }
                             VStack {
                                 HStack {
-                                    Text(workout.name)
+                                    Text(workout.name + "s")
                                         .font(.title2)
                                         .fontWeight(.bold)
                                         //.foregroundColor(.white)
@@ -148,7 +148,7 @@ struct WorkoutSummary: View {
                         }.padding(.top, 10)
                         ForEach (Array(action.keys), id: \.self) {
                             mistake in
-                            if (mistake != "None" && mistake != "Squat") {
+                            if (mistake != "None" && mistake != workout.name) {
                                 WorkoutMistakeRow(workout: workout, mistake: mistake, description: workout.mistakes[mistake]!, count: action[mistake]!)
                             }
                         }
