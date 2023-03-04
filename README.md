@@ -28,11 +28,17 @@ An action classifier is a type of machine learning model that is trained to reco
   >During the training step of the RepCount application, we utilized the CoreML Tool to create our action classifier model. To optimize the model's performance, we set a frame rate of approximately 30 frames per second and an action duration of 2 seconds, which corresponds to a prediction window of 60 frames. During the training step, we utilized the technique of horizontally flipping the videos as a data augmentation method to improve the model's ability to generalize to new scenarios. By flipping the videos horizontally, we created additional training examples that were similar to the original videos but mirrored, which helped the model to learn to recognize and classify actions from both sides. This approach can improve the model's accuracy and robustness, allowing it to identify actions accurately in a wider range of scenarios.
   
   <img width="1418" alt="Screenshot 2022-12-26 alle 16 24 49" src="https://user-images.githubusercontent.com/58709856/222925400-c3d63d38-c5c3-4800-bc1e-98919a2c0df2.png">
+  <img width="1418" alt="Screenshot 2022-12-26 alle 16 25 13" src="https://user-images.githubusercontent.com/58709856/222925445-51abb7c0-9e61-48f2-85db-2019cf4b5e4b.png">
+
 
 
 * **Evaluating the Action Classifier**: After training the model, the next step is to evaluate its performance. This involves testing the model on a separate dataset of videos and measuring its accuracy, precision, recall, and other evaluation metrics. This step is important for identifying any issues with the model's performance and making adjustments as needed.
 
   >During the training process, the dataset was iterated about 80 times to optimize the model's performance. As a result, the training dataset achieved a final accuracy score of 99%, while the validation dataset achieved a score of 100%. These scores indicate that the model was able to learn and accurately classify the different actions with a high degree of accuracy.
+  
+  <img width="1419" alt="Screenshot 2022-12-26 alle 16 25 38" src="https://user-images.githubusercontent.com/58709856/222925460-a4a4a58b-7410-424c-a172-f4ea43b8a61e.png"><img width="1418" alt="Screenshot 2022-12-26 alle 16 25 52" src="https://user-images.githubusercontent.com/58709856/222925473-21e97c59-9491-47b5-aea9-c77758aa4f7c.png">
+
+
 
 <img width="597" alt="image" src="https://user-images.githubusercontent.com/58709856/209690667-a892e93d-905d-4200-a027-74856fbc9bf8.png">
 
