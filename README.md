@@ -19,7 +19,9 @@ The workflow for developing RepCount can be summarized into three principal step
 
 An action classifier is a type of machine learning model that is trained to recognize and classify human actions in video data. The three main steps required to create an action classifier model can be summarized as follows:
 
-* **Collecting and Organizing Example Action Videos**: This involves collecting a dataset of example videos that demonstrate the actions you want the classifier to recognize, and organizing these videos into a format that can be used for training the model. This step is crucial for ensuring that the model has enough diverse and representative data to learn from.
+* **Collecting and Organizing Example Action Videos**: This involves collecting a dataset of example videos that demonstrate the actions you want the classifier to recognize, and organizing these videos into a format that can be used for training the model. This step is crucial for ensuring that the model has enough diverse and representative data to learn from. 
+
+  For the RepCount application, we have collected a dataset of 600 videos from 4 individuals with varying characteristics such as weight, height, age, and sex. This dataset includes 300 videos of the None Action, 100 videos of the Squat Action, 100 videos of the Half-Squat Action, and 100 videos of the Knees-In Action.
 * **Training the Action Classifier**: Once the dataset is collected and organized, the next step is to train the action classifier model. This involves using machine learning algorithms and techniques to teach the model to recognize and classify the different actions in the dataset. This step requires careful selection of machine learning techniques and parameters to optimize the model's accuracy.
 * **Evaluating the Action Classifier**: After training the model, the next step is to evaluate its performance. This involves testing the model on a separate dataset of videos and measuring its accuracy, precision, recall, and other evaluation metrics. This step is important for identifying any issues with the model's performance and making adjustments as needed.
 
