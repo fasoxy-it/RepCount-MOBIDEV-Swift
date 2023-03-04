@@ -12,7 +12,7 @@ The first step was to collect a considerable number of videos. In this regard, 6
 * **Knees** (100)
 
 ## Stages 
-* Introduzione
+* Introduction
 * UI/UX
 * Application
 * Creating an action classifier model
