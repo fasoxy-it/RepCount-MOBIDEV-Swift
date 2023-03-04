@@ -5,18 +5,46 @@ RepCount is an iOS application that automates the real-time counting of the repe
 
 With this application, therefore, we intend to provide users with a tool that allows them to verify and count the execution of the repetitions of motor exercises.
 
+>The application is currently in BETA and focuses on detecting squats. It has a classification system that can identify two common types of errors: half-squats and knees-in.
+
+##Introduction
+
+The workflow for developing RepCount can be summarized into three principal steps:
+
+1. Creating the Action Classifier Model
+2. Detecting Human Actions in Live Video Feed
+3. Developing the RepCount Application.
+
+## Creating an Action Classifier Model
+
+An action classifier is a type of machine learning model that is trained to recognize and classify human actions in video data. The three main steps required to create an action classifier model can be summarized as follows:
+
+* Collecting and Organizing Example Action Videos: This involves collecting a dataset of example videos that demonstrate the actions you want the classifier to recognize, and organizing these videos into a format that can be used for training the model. This step is crucial for ensuring that the model has enough diverse and representative data to learn from.
+* Training the Action Classifier: Once the dataset is collected and organized, the next step is to train the action classifier model. This involves using machine learning algorithms and techniques to teach the model to recognize and classify the different actions in the dataset. This step requires careful selection of machine learning techniques and parameters to optimize the model's accuracy.
+* Evaluating the Action Classifier: After training the model, the next step is to evaluate its performance. This involves testing the model on a separate dataset of videos and measuring its accuracy, precision, recall, and other evaluation metrics. This step is important for identifying any issues with the model's performance and making adjustments as needed.
+
+<img width="597" alt="image" src="https://user-images.githubusercontent.com/58709856/209690667-a892e93d-905d-4200-a027-74856fbc9bf8.png">
+
+Create ML uses Vision during training to find significant points on a person’s body, called landmarks, in each frame of a video. Action classifiers learn to recognize the movement patterns of these points over time. 
+
+At runtime, the app uses the action classifier to identify a person’s action by analyzing a series of video frames from a camera or file.
+
+<img width="771" alt="image" src="https://user-images.githubusercontent.com/58709856/209801476-02bdf775-5604-4239-a773-cab353c296f0.png">
+
+Training an action classifier with the Create ML developer tool follows the same general workflow:
+
+* Configuring the action classifiers's frame rate based on its destination app
+* Acquiring videos that meet or exceed that frame rate
+* Acquiring videos of humans clearly performing actions in a suitable enviroment
+* Acquiring videos of relates but irrelevant actions
+
+
+
 The first step was to collect a considerable number of videos. In this regard, 600 videos were collected, divided into:
 * **None** (600)
 * **Squat** (100)
 * **Halfsquat** (100)
 * **Knees** (100)
-
-## Stages 
-* Introduction
-* UI/UX
-* Application
-* Creating an action classifier model
-* Detecting Motor Exercies in Live Video Feed
 
 ## Detecting Human Actions in a Live Video Feed
 
