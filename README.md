@@ -45,16 +45,13 @@ An action classifier is a type of machine learning model that is trained to reco
 
 The movements of a person's body, referred to as actions, can be detected through the analysis of a sequence of video frames. By utilizing an action classifier, the name of a particular movement can be predicted with a high degree of accuracy. This allows for the identification of specific actions in real-time video feeds, which can be useful for a variety of applications, including fitness tracking and sports analysis. The process involves training an action classifier using machine learning techniques on a dataset of example action videos. Once the model has been trained, it can be applied to a live video feed to classify the actions being performed in real-time. By accurately detecting and classifying human actions, it is possible to gain valuable insights into a person's movements, which can be used to improve training techniques, prevent injury, and enhance overall performance.
 
-  >In this application, there is an action classifier that has been trained to recognize four types of exercises: None, Squat, Half-squat, and Knees. The application makes its prediction based on the live video feed from the device's camera, which is displayed full-screen. 
+  >In this application, there is an action classifier that has been trained to recognize four types of exercises: None, Squat, Half-squat, and Knees. The application makes its prediction based on the live video feed from the device's camera, which is displayed full-screen. When the application is launched, it configures the camera to generate video frames, and these frames are then processed through a series of methods using Combine. These methods work together to analyze the frames and predict the action by following the sequence of steps outlined below:
+  >1. Identify and locate all human body poses in each frame.
+  >2. Isolate the most prominent pose.
+  >3. Aggregate the position data of the most prominent pose over a period of time.
+  >4. Use the aggregated data to make action predictions by sending it to the action classifier.
 
-When the application is launched, it configures the camera to generate video frames, and these frames are then processed through a series of methods using Combine. These methods work together to analyze the frames and predict the action by following the sequence of steps outlined below:
-  
-  1. Identify and locate all human body poses in each frame.
-  2. Isolate the most prominent pose.
-  3. Aggregate the position data of the most prominent pose over a period of time.
-  4. Use the aggregated data to make action predictions by sending it to the action classifier.
-
-  Through these steps, the application is able to accurately recognize and classify different exercise actions in real-time.
+  >Through these steps, the application is able to accurately recognize and classify different exercise actions in real-time.
 
 
 Create ML uses Vision during training to find significant points on a person’s body, called landmarks, in each frame of a video. Action classifiers learn to recognize the movement patterns of these points over time. 
