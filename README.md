@@ -53,7 +53,7 @@ The movements of a person's body, referred to as actions, can be detected throug
   >
   >By following these steps, the application is able to accurately recognize and classify different exercise actions in real-time. To achieve this, Create ML is used during the training phase to identify significant points on a person's body, called landmarks, in each video frame. These landmarks are then used to train the action classifiers to recognize the movement patterns associated with each exercise over time.
 
-  <img width="930" alt="Detecting Human Actions in a Live Video Feed" src="https://user-images.githubusercontent.com/58709856/222966984-18af213e-094c-45f6-a38a-a446af7ba0dd.png">|
+  <img width="100%" alt="Detecting Human Actions in a Live Video Feed" src="https://user-images.githubusercontent.com/58709856/222966984-18af213e-094c-45f6-a38a-a446af7ba0dd.png">|
   :-------------------------:|
   Detecting Human Actions in a Live Video Feed **Workflow** |
 
