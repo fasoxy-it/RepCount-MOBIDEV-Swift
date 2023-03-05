@@ -1,6 +1,8 @@
 # RepCount-MOBIDEV-Swift
 >MOBIDEV Exam Project
 
+<img width="512" alt="RepCount (3)" src="https://user-images.githubusercontent.com/58709856/222963683-6f19df37-9117-4582-b6d4-a8c47b95c2d7.png">
+
 RepCount is an iOS application that automates the real-time counting of the repetitions of a specific motor exercise and which allows you to determine the correctness of the execution.
 
 With this application, therefore, we intend to provide users with a tool that allows them to verify and count the execution of the repetitions of motor exercises.
