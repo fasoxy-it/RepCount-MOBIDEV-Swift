@@ -50,11 +50,10 @@ The movements of a person's body, referred to as actions, can be detected throug
   >2. Isolate the most prominent pose.
   >3. Aggregate the position data of the most prominent pose over a period of time.
   >4. Use the aggregated data to make action predictions by sending it to the action classifier.
-
+  >
   >Through these steps, the application is able to accurately recognize and classify different exercise actions in real-time.
-
-
-Create ML uses Vision during training to find significant points on a person’s body, called landmarks, in each frame of a video. Action classifiers learn to recognize the movement patterns of these points over time. 
+  >
+  >Create ML uses Vision during training to find significant points on a person’s body, called landmarks, in each frame of a video. Action classifiers learn to recognize the movement patterns of these points over time. 
 
 At runtime, the app uses the action classifier to identify a person’s action by analyzing a series of video frames from a camera or file.
 
