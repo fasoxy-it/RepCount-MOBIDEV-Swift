@@ -71,5 +71,5 @@ The movements of a person's body, referred to as actions, can be detected throug
 Workout **List** Activity | Workout **Detail** Activity | Workout **Main** Activity | Workout **Summary** Activity
 
 ## Technologies
-* SwiftUI
+* XCode
 * CreateML
