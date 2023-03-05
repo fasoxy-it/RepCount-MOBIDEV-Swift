@@ -15,7 +15,7 @@ The workflow for developing RepCount can be summarized into three principal step
 
 1. Creating the Action Classifier Model
 2. Detecting Human Actions in Live Video Feed
-3. Developing the RepCount Application.
+3. Developing the RepCount Application
 
 ## Creating an Action Classifier Model
 
