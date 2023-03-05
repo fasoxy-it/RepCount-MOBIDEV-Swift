@@ -100,12 +100,12 @@ Training an action classifier with the Create ML developer tool follows the same
 
 ## Developing the RepCount Application
 
-The RepCount application has the following main screens:
+The RepCount application has the following main activities:
 
-1. Workout List Activity: This screen displays a list of available workouts to choose from.
-2. Workout Detail Activity: This screen provides detailed information about the selected workout, including the muscle group involved in the exercise, the exercise intensity, a description of the exercise, an example video of the correct execution of the exercise, and a list of warnings to keep in mind during the exercise.
-3. Workout Main Activity: This screen shows the live video feed captured by the camera in the background, with the skeleton of the pose of the main body joins superimposed. In the foreground, a box displays the time taken to perform the exercise, the number of repetitions performed correctly, and the number of repetitions performed incorrectly. It also has three controls that allow you to respectively: change the camera between front and rear, pause or restart the exercise monitoring, and end the exercise monitoring.
-4. Workout Summary Activity: This screen provides a summary of the main information related to the workout, such as the muscle group and intensity. It also presents a summary of the exercise execution, including the time taken, number of repetitions correctly performed, number of errors committed, and a percentage of execution accuracy. Additionally, there is a dedicated section that reports the specific number of repetitions associated with each error, and a button that provides a description of how to correct the exercise form.
+1. Workout List Activity: This activity displays a list of available workouts to choose from.
+2. Workout Detail Activity: This activity provides detailed information about the selected workout, including the muscle group involved in the exercise, the exercise intensity, a description of the exercise, an example video of the correct execution of the exercise, and a list of warnings to keep in mind during the exercise.
+3. Workout Main Activity: This activity shows the live video feed captured by the camera in the background, with the skeleton of the pose of the main body joins superimposed. In the foreground, a box displays the time taken to perform the exercise, the number of repetitions performed correctly, and the number of repetitions performed incorrectly. It also has three controls that allow you to respectively: change the camera between front and rear, pause or restart the exercise monitoring, and end the exercise monitoring.
+4. Workout Summary Activity: This activity provides a summary of the main information related to the workout, such as the muscle group and intensity. It also presents a summary of the exercise execution, including the time taken, number of repetitions correctly performed, number of errors committed, and a percentage of execution accuracy. Additionally, there is a dedicated section that reports the specific number of repetitions associated with each error, and a button that provides a description of how to correct the exercise form.
 
 
 ## Technologies
