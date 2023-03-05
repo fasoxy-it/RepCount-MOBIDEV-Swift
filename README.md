@@ -34,7 +34,7 @@ An action classifier is a type of machine learning model that is trained to reco
 
   >During the training process, the dataset was iterated about 80 times to optimize the model's performance. As a result, the training dataset achieved a final accuracy score of 99%, while the validation dataset achieved a score of 100%. These scores indicate that the model was able to learn and accurately classify the different actions with a high degree of accuracy.
   
-  <img width="100%" alt="Training Data for Training" src="https://user-images.githubusercontent.com/58709856/222959523-e213d18e-a394-4fce-bc6a-d1304ac0f6dc.png"><img width="100%" alt="Training Data for Validation" src="https://user-images.githubusercontent.com/58709856/222959532-61ebe657-da1c-4d75-92d7-71f7e1dec357.png">
+  <img width="50%" alt="Training Data for Training" src="https://user-images.githubusercontent.com/58709856/222959523-e213d18e-a394-4fce-bc6a-d1304ac0f6dc.png"><img width="50%" alt="Training Data for Validation" src="https://user-images.githubusercontent.com/58709856/222959532-61ebe657-da1c-4d75-92d7-71f7e1dec357.png">
 
 ## Detecting Human Actions in a Live Video Feed
 
