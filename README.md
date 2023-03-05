@@ -1,7 +1,7 @@
 # RepCount-MOBIDEV-Swift
 >MOBIDEV Exam Project
 
-<img width="100%" alt="Settings of Action Classifier Model" src="https://user-images.githubusercontent.com/58709856/222965040-af04b529-4eb6-48b8-b7f2-85cd3cae9a26.png">
+<img width="10%" alt="Settings of Action Classifier Model" src="https://user-images.githubusercontent.com/58709856/222965040-af04b529-4eb6-48b8-b7f2-85cd3cae9a26.png">
 
 RepCount is an iOS application that automates the real-time counting of the repetitions of a specific motor exercise and which allows you to determine the correctness of the execution.
 
