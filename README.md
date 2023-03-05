@@ -29,8 +29,9 @@ An action classifier is a type of machine learning model that is trained to reco
 
   >During the training step of the RepCount application, we utilized the CoreML Tool to create our action classifier model. To optimize the model's performance, we set a frame rate of approximately 30 frames per second and an action duration of 2 seconds, which corresponds to a prediction window of 60 frames. During the training step, we utilized the technique of horizontally flipping the videos as a data augmentation method to improve the model's ability to generalize to new scenarios. By flipping the videos horizontally, we created additional training examples that were similar to the original videos but mirrored, which helped the model to learn to recognize and classify actions from both sides. This approach can improve the model's accuracy and robustness, allowing it to identify actions accurately in a wider range of scenarios.
   
-  <img width="100%" alt="Training the Action Classifier Model" src="https://user-images.githubusercontent.com/58709856/222959568-6099b590-82e9-4ce9-9de2-540a96bb0242.png">
-
+  <img width="100%" alt="Settings of Action Classifier Model" src="https://user-images.githubusercontent.com/58709856/222964558-8f5d6d64-51d6-4d23-bd96-7311b82e9735.png">| <img width="100%" alt="Training the Action Classifier Model" src="https://user-images.githubusercontent.com/58709856/222959568-6099b590-82e9-4ce9-9de2-540a96bb0242.png">
+  :-------------------------:|:-------------------------:
+  **Settings** of Action Classifier Model | **Training** the Action Classifier Model
 
 * **Evaluating the Action Classifier**: After training the model, the next step is to evaluate its performance. This involves testing the model on a separate dataset of videos and measuring its accuracy, precision, recall, and other evaluation metrics. This step is important for identifying any issues with the model's performance and making adjustments as needed.
 
