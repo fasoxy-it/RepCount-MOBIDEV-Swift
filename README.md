@@ -58,7 +58,8 @@ Create ML uses Vision during training to find significant points on a person’s
 
 At runtime, the app uses the action classifier to identify a person’s action by analyzing a series of video frames from a camera or file.
 
-<img width="771" alt="image" src="https://user-images.githubusercontent.com/58709856/209801476-02bdf775-5604-4239-a773-cab353c296f0.png">
+<img width="1717" alt="Detecting Human Actions in Live Video Feed" src="https://user-images.githubusercontent.com/58709856/222959088-6c681728-0dcb-4669-8a1c-1f054c921e24.png">
+
 
 ## Developing the RepCount Application
 
