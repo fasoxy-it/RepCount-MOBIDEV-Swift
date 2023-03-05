@@ -47,7 +47,7 @@ The movements of a person's body, referred to as actions, can be detected throug
 
   >In this application, there is an action classifier that has been trained to recognize four types of exercises: None, Squat, Half-squat, and Knees. The application makes its prediction based on the live video feed from the device's camera, which is displayed full-screen.
   
-  When the application is launched, it configures the camera to generate video frames, and these frames are then processed through a series of methods using Combine. These methods work together to analyze the frames and predict the action by following the sequence of steps outlined below:
+  >When the application is launched, it configures the camera to generate video frames, and these frames are then processed through a series of methods using Combine. These methods work together to analyze the frames and predict the action by following the sequence of steps outlined below:
   
   1. Identify and locate all human body poses in each frame.
   2. Isolate the most prominent pose.
