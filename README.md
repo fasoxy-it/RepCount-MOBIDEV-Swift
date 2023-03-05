@@ -59,7 +59,7 @@ The movements of a person's body, referred to as actions, can be detected throug
 
 ## Developing the RepCount Application
 
-The RepCount application has the following main activities:
+RepCount is a mobile application that uses computer vision and machine learning algorithms to detect and count repetitions during a workout. To provide an intuitive user experience, the application is characterized by few activities that allow users to choose a workout, track their progress, and get detailed feedback on their performance. Specifically, these activities include:
 
 1. **Workout List Activity**: This activity displays a list of available workouts to choose from.
 2. **Workout Detail Activity**: This activity provides detailed information about the selected workout, including the muscle group involved in the exercise, the exercise intensity, a description of the exercise, an example video of the correct execution of the exercise, and a list of warnings to keep in mind during the exercise.
