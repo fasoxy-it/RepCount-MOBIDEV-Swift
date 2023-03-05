@@ -72,13 +72,6 @@ The RepCount application has the following main activities:
 :-------------------------:|:-------------------------:
 <img width="367" alt="Workout Main Activity" src="https://user-images.githubusercontent.com/58709856/222958990-761d0635-9acb-425c-b717-98fc86fb6db1.png">  |  <img width="367" alt="Workout Summary Activity" src="https://user-images.githubusercontent.com/58709856/222958955-5dff29b7-2a1c-4f2e-bcff-2dc0a69cb6b4.png">
 
-<img width="366" alt="Workout List Activity" src="https://user-images.githubusercontent.com/58709856/222958937-29fb97f3-330f-4958-9661-6f35138cc9b2.png">
-<img width="366" alt="Workout Detail Activity" src="https://user-images.githubusercontent.com/58709856/222958971-3d230f6b-6399-4012-add7-4d5c3b4cd349.png">
-<img width="367" alt="Workout Main Activity" src="https://user-images.githubusercontent.com/58709856/222958990-761d0635-9acb-425c-b717-98fc86fb6db1.png">
-<img width="367" alt="Workout Summary Activity" src="https://user-images.githubusercontent.com/58709856/222958955-5dff29b7-2a1c-4f2e-bcff-2dc0a69cb6b4.png">
-
-
-
 ## Technologies
 * SWIFTUI
 * CreateML
